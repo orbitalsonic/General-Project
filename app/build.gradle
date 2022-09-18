@@ -57,12 +57,10 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation 'com.google.code.gson:gson:2.9.1'
 
-    // SDP layout size
-    implementation 'com.intuit.sdp:sdp-android:1.0.6'
-    // SSP Text sizes
-    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    // SDP layout size && SSP Text sizes
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
 
     // navigation components
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
@@ -77,6 +75,10 @@ dependencies {
     // Firebase Crashlytics (Kotlin)
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
 
+    // View Model
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+
     // Koin for dependency injection
     implementation "io.insert-koin:koin-android:3.2.0"
 
@@ -86,5 +88,8 @@ dependencies {
 
     // required to avoid crash on Android 12 API 31
     implementation 'androidx.work:work-runtime-ktx:2.7.1'
+
+    // GSON (JSON to Object & vice versa)
+    implementation 'com.google.code.gson:gson:2.9.1'
 
 }
