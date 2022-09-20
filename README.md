@@ -1,5 +1,5 @@
 # General-Project
-In General Project we cover up all topics which need for clean architecture and use small to large projects.
+In General Project we cover up all the topics which are need for clean architecture and used in all small to large projects.
 
 ## Following are the topics we cover in project
 * Navigation
