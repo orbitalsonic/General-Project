@@ -1,8 +1,12 @@
 package com.orbitalsonic.generalproject.ui.fragments
 
+import android.app.Activity
+import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
@@ -19,6 +23,21 @@ open class FragmentGeneral : Fragment() {
 
     fun getResString(stringId: Int): String {
         return context?.resources?.getString(stringId) ?: ""
+    }
+
+
+    fun showKeyboard() {
+        val imm: InputMethodManager? = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
+        imm?.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
+    }
+
+    fun hideKeyboard() {
+        val inputMethodManager: InputMethodManager = context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        var view: View? = activity?.currentFocus
+        if (view == null) {
+            view = View(activity)
+        }
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
     /* -------------------------------- Toast -------------------------------- */
