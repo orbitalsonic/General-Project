@@ -7,7 +7,6 @@ import androidx.navigation.fragment.findNavController
 open class BaseNavFragment : FragmentGeneral() {
 
     /**
-     * TODO
      *     Used launchWhenCreated, bcz of screen rotation
      *     Used launchWhenResumed, bcz of screen rotation
      * @param fragment_id : Current Fragment's Id (from Nav Graph)
