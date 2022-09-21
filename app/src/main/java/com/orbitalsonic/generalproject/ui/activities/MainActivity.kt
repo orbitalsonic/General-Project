@@ -47,9 +47,9 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.fragmentHome ->
-                    lockDrawer(true)
-                else ->
                     lockDrawer(false)
+                else ->
+                    lockDrawer(true)
             }
         }
     }
