@@ -1,13 +1,15 @@
 package com.orbitalsonic.generalproject.helpers.utils
 
-import android.content.SharedPreferences
+import android.app.Application
+import android.content.Context
 
 private const val isBillingRequireKey = "isBillingRequire"
 
-class SharedPreferenceUtils(private val sharedPreferences: SharedPreferences) {
+class SharedPreferenceUtils(context: Context) {
 
     /* -------------------------- Billing -------------------------- */
-
+    private val sharedPreferences =
+        context.getSharedPreferences("app_preferences", Application.MODE_PRIVATE)
     var isBillingRequired: Boolean
         get() = sharedPreferences.getBoolean(isBillingRequireKey, true)
         set(value) {

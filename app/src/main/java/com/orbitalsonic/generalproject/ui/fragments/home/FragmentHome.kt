@@ -14,6 +14,9 @@ class FragmentHome : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     override fun onViewCreatedEverytime() {
         // For ViewModels
+
+        // For test
+        showToast(diComponent.internetManager.isInternetConnected.toString())
     }
 
 
