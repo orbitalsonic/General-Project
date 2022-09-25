@@ -26,7 +26,19 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
-    <!-- ________________________________________ TextView ________________________________________ -->
+    <!-- _____________ TextView _____________ -->
+
+    <style name="CustomTextSmall" parent="TextAppearance.Material3.BodyLarge"/>
+
+    <style name="CustomTextSmallBold" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CustomTextMedium" parent="TextAppearance.Material3.HeadlineSmall"/>
+
+    <style name="CustomTextMediumBold" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textStyle">bold</item>
+    </style>
 
     <style name="DrawerItemTextStyle" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="android:textColor">@color/black</item>

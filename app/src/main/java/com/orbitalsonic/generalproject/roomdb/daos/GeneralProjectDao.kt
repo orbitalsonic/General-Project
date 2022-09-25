@@ -1,28 +1,28 @@
 package com.orbitalsonic.generalproject.roomdb.daos
 
 import androidx.room.*
-import com.orbitalsonic.generalproject.roomdb.tables.FavouriteTable
+import com.orbitalsonic.generalproject.roomdb.tables.CountryTable
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface GeneralProjectDao {
     
     /***
-     * Favourite DAO
+     * Country DAO
      */
 
-    @Query("SELECT * FROM favourite_table ORDER BY id DESC")
-    fun getAllFavouriteList(): Flow<List<FavouriteTable>>
+    @Query("SELECT * FROM country_table ORDER BY id DESC")
+    fun getAllCountryList(): Flow<List<CountryTable>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertFavourite(favouriteTable: FavouriteTable)
+    suspend fun insertCountry(countryTable: CountryTable)
 
     @Delete
-    suspend fun deleteFavourite(favouriteTable: FavouriteTable)
+    suspend fun deleteCountry(countryTable: CountryTable)
 
     @Update
-    suspend fun updateFavourite(favouriteTable: FavouriteTable)
+    suspend fun updateCountry(countryTable: CountryTable)
 
-    @Query("DELETE FROM favourite_table")
-    suspend fun deleteAllFavourite()
+    @Query("DELETE FROM country_table")
+    suspend fun deleteAllCountry()
 }

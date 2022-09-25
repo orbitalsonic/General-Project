@@ -1,5 +1,7 @@
-package com.orbitalsonic.generalproject.ui.fragments
+package com.orbitalsonic.generalproject.ui.fragments.base
 
+import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
@@ -39,5 +41,14 @@ open class BaseNavFragment : FragmentGeneral() {
 
     private fun isCurrentDestination(fragment_id: Int): Boolean {
         return findNavController().currentDestination?.id == fragment_id
+    }
+
+    fun Fragment.onBackPressed(callback: () -> Unit) {
+        this.activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                this.remove()
+                callback()
+            }
+        })
     }
 }

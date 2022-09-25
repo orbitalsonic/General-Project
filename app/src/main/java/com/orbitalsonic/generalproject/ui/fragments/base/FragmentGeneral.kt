@@ -1,4 +1,4 @@
-package com.orbitalsonic.generalproject.ui.fragments
+package com.orbitalsonic.generalproject.ui.fragments.base
 
 import android.app.Activity
 import android.content.Context

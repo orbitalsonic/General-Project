@@ -9,11 +9,11 @@ import kotlinx.parcelize.Parcelize
 
 @Keep
 @Parcelize
-@Entity(tableName = "favourite_table")
-data class FavouriteTable(
+@Entity(tableName = "country_table")
+data class CountryTable(
     @PrimaryKey(autoGenerate = true) var id: Int = 0,
-    @ColumnInfo(name = "countryName") var fromLanguageName: String,
-    @ColumnInfo(name = "countryCode") var toLanguageName: String,
-    @ColumnInfo(name = "countryFlag") var fromLanguageCode: String,
+    @ColumnInfo(name = "countryName") var countryName: String,
+    @ColumnInfo(name = "countryCode") var countryCode: String,
+    @ColumnInfo(name = "countryFlag") var countryFlag: String,
     @ColumnInfo(name = "city") var city: City
-): Parcelable
+) : Parcelable

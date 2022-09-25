@@ -2,40 +2,34 @@ package com.orbitalsonic.generalproject.roomdb.repository
 
 import androidx.annotation.WorkerThread
 import com.orbitalsonic.generalproject.roomdb.daos.GeneralProjectDao
-import com.orbitalsonic.generalproject.roomdb.tables.FavouriteTable
+import com.orbitalsonic.generalproject.roomdb.tables.CountryTable
 import kotlinx.coroutines.flow.Flow
 
 class GeneralProjectRepository(private val generalProjectDao: GeneralProjectDao) {
 
-
     /***
-     * favourite_table methods
+     * country_table methods
      */
 
-    val allFavouriteList: Flow<List<FavouriteTable>> = generalProjectDao.getAllFavouriteList()
+    val allCountryList: Flow<List<CountryTable>> = generalProjectDao.getAllCountryList()
 
-    @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun insertFavourite(favouriteTable: FavouriteTable) {
-        generalProjectDao.insertFavourite(favouriteTable)
+    suspend fun insertCountry(countryTable: CountryTable) {
+        generalProjectDao.insertCountry(countryTable)
     }
 
-    @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun deleteFavourite(favouriteTable: FavouriteTable) {
-        generalProjectDao.deleteFavourite(favouriteTable)
+    suspend fun deleteCountry(countryTable: CountryTable) {
+        generalProjectDao.deleteCountry(countryTable)
     }
 
-    @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun updateFavourite(favouriteTable: FavouriteTable) {
-        generalProjectDao.updateFavourite(favouriteTable)
+    suspend fun updateCountry(countryTable: CountryTable) {
+        generalProjectDao.updateCountry(countryTable)
     }
 
-    @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun deleteAllFavouriteList() {
-        generalProjectDao.deleteAllFavourite()
+    suspend fun deleteAllCountryList() {
+        generalProjectDao.deleteAllCountry()
     }
-
 }

@@ -54,9 +54,13 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // MenuHostProvider
+    implementation "androidx.activity:activity-ktx:1.6.0"
 
     // GSON (JSON to Object & vice versa)
     implementation 'com.google.code.gson:gson:2.9.1'
