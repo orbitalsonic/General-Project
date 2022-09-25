@@ -14,6 +14,7 @@ import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.FragmentEnlistCountryBinding
 import com.orbitalsonic.generalproject.helpers.adapters.recyclerView.AdapterCountry
 import com.orbitalsonic.generalproject.helpers.interfaces.OnCountryItemClickListener
+import com.orbitalsonic.generalproject.helpers.interfaces.SonicBackPressedCallback
 import com.orbitalsonic.generalproject.helpers.listeners.DebounceListener.setDebounceClickListener
 import com.orbitalsonic.generalproject.roomdb.tables.CountryTable
 import com.orbitalsonic.generalproject.ui.fragments.base.BaseFragment
@@ -32,6 +33,7 @@ class FragmentEnlistCountry : BaseFragment<FragmentEnlistCountryBinding>(R.layou
     override fun onViewCreatedEverytime() {
         initToolbarMenu()
         initObservers()
+        registerBackPressDispatcher()
     }
 
     private fun initRecyclerView() {
@@ -134,9 +136,13 @@ class FragmentEnlistCountry : BaseFragment<FragmentEnlistCountryBinding>(R.layou
         }
     }
 
-    override fun registerBackPressDispatcher() {
-        onBackPressed {
-            popFrom(R.id.fragmentEnlistCountry)
-        }
+    private fun registerBackPressDispatcher() {
+        sonicBackPress(object : SonicBackPressedCallback {
+            override fun onSonicBackPressed() {
+                popFrom(R.id.fragmentEnlistCountry)
+            }
+
+        })
     }
+
 }

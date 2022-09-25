@@ -1,6 +1,7 @@
 package com.orbitalsonic.generalproject.ui.activities
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -11,7 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.orbitalsonic.generalproject.BuildConfig
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.ActivityMainBinding
-import com.orbitalsonic.generalproject.helpers.extensions.Extensions.onBackPress
+import com.orbitalsonic.generalproject.helpers.extensions.Extensions.sonicBackPress
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.feedback
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.privacyPolicy
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.rateUs
@@ -90,14 +91,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun registerBackPressDispatcher() {
-        onBackPress {
+        sonicBackPress {
             if (binding.drawerLayoutMain.isDrawerOpen(GravityCompat.START)) {
                 binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
             } else {
                 if (navController.currentDestination?.id == R.id.fragmentHome) {
                     finishAndRemoveTask()
-                } else {
-                    navController.popBackStack()
                 }
             }
         }

@@ -5,6 +5,7 @@ import com.orbitalsonic.generalproject.databinding.FragmentCountryBinding
 import com.orbitalsonic.generalproject.helpers.adapters.recyclerView.AdapterCountry
 import com.orbitalsonic.generalproject.helpers.dataProvider.DPCountry
 import com.orbitalsonic.generalproject.helpers.interfaces.OnCountryItemClickListener
+import com.orbitalsonic.generalproject.helpers.interfaces.SonicBackPressedCallback
 import com.orbitalsonic.generalproject.roomdb.tables.CountryTable
 import com.orbitalsonic.generalproject.ui.fragments.base.BaseFragment
 
@@ -19,7 +20,7 @@ class FragmentCountry : BaseFragment<FragmentCountryBinding>(R.layout.fragment_c
     }
 
     override fun onViewCreatedEverytime() {
-
+        registerBackPressDispatcher()
     }
 
     private fun initRecyclerView() {
@@ -34,9 +35,12 @@ class FragmentCountry : BaseFragment<FragmentCountryBinding>(R.layout.fragment_c
 
     private fun setUI() = adapterCountry.submitList(dpCountry.countryTableList)
 
-    override fun registerBackPressDispatcher() {
-        onBackPressed {
-            popFrom(R.id.fragmentCountry)
-        }
+    private fun registerBackPressDispatcher() {
+        sonicBackPress(object :SonicBackPressedCallback{
+            override fun onSonicBackPressed() {
+                popFrom(R.id.fragmentCountry)
+            }
+
+        })
     }
 }
