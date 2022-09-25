@@ -33,11 +33,13 @@ abstract class BaseFragment<T : ViewDataBinding>(private val layoutId: Int) : Ba
         _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
 
         rootView?.let {
+            _binding = DataBindingUtil.bind(it)
+            (rootView?.parent as? ViewGroup)?.removeView(rootView)
             return it
         } ?: kotlin.run {
-            (rootView?.parent as? ViewGroup)?.removeView(rootView)
+            _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
             rootView = binding.root
-            return binding.root
+            return rootView!!
         }
     }
 
