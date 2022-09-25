@@ -11,16 +11,41 @@
         android:label="Home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_fragmentHome_to_fragmentSample"
-            app:destination="@id/fragmentSample"
+            android:id="@+id/action_fragmentHome_to_fragmentEnlistCountry"
+            app:destination="@id/fragmentEnlistCountry"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentSample"
-        android:name="com.orbitalsonic.generalproject.ui.fragments.sample.FragmentSample"
-        android:label="Sample"
-        tools:layout="@layout/fragment_sample" />
+        android:id="@+id/fragmentEnlistCountry"
+        android:name="com.orbitalsonic.generalproject.ui.fragments.country.FragmentEnlistCountry"
+        android:label="Enlist Countries"
+        tools:layout="@layout/fragment_enlist_country" >
+        <action
+            android:id="@+id/action_fragmentEnlistCountry_to_fragmentCountry"
+            app:destination="@id/fragmentCountry"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragmentEnlistCountry_to_fragmentCountryDetail"
+            app:destination="@id/fragmentCountryDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCountry"
+        android:name="com.orbitalsonic.generalproject.ui.fragments.country.FragmentCountry"
+        android:label="Add Country"
+        tools:layout="@layout/fragment_country" />
+    <fragment
+        android:id="@+id/fragmentCountryDetail"
+        android:name="com.orbitalsonic.generalproject.ui.fragments.country.FragmentCountryDetail"
+        android:label="Country Details"
+        tools:layout="@layout/fragment_country_detail">
+        <argument
+            android:name="country_table"
+            app:argType="com.orbitalsonic.generalproject.roomdb.tables.CountryTable" />
+    </fragment>
 </navigation>

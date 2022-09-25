@@ -6,17 +6,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.home.FragmentHome">
+        tools:context=".ui.fragments.country.FragmentCountryDetail">
 
-        <Button
-            android:id="@+id/btn_click_Home"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tv_results_country_detail"
+            style="@style/CustomTextMedium"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/room_database"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Result" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

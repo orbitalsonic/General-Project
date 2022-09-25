@@ -1,4 +1,4 @@
-package com.orbitalsonic.generalproject.ui.fragments
+package com.orbitalsonic.generalproject.ui.fragments.base
 
 import android.app.Activity
 import android.os.Bundle
@@ -30,7 +30,6 @@ abstract class BaseFragment<T : ViewDataBinding>(private val layoutId: Int) : Ba
     val diComponent = DIComponent()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
 
         rootView?.let {
             _binding = DataBindingUtil.bind(it)
@@ -71,6 +70,11 @@ abstract class BaseFragment<T : ViewDataBinding>(private val layoutId: Int) : Ba
      *  @since : Write Code to be called everytime
      */
     abstract fun onViewCreatedEverytime()
+
+    /**
+     *  @since : Write Code for BackPress Functionality
+     */
+    abstract fun registerBackPressDispatcher()
 
     override fun onDestroyView() {
         super.onDestroyView()

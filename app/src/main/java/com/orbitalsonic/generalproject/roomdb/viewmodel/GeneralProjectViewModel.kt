@@ -5,31 +5,31 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.orbitalsonic.generalproject.roomdb.repository.GeneralProjectRepository
-import com.orbitalsonic.generalproject.roomdb.tables.FavouriteTable
+import com.orbitalsonic.generalproject.roomdb.tables.CountryTable
 import kotlinx.coroutines.launch
 
 class GeneralProjectViewModel(private val repository: GeneralProjectRepository) : ViewModel() {
 
     /***
-     * Favourite ViewModel Methods
+     * Country ViewModel Methods
      */
 
-    val allFavouriteList: LiveData<List<FavouriteTable>> = repository.allFavouriteList.asLiveData()
+    val allCountryList: LiveData<List<CountryTable>> = repository.allCountryList.asLiveData()
 
-    fun insertFavourite(favouriteTable: FavouriteTable) = viewModelScope.launch {
-        repository.insertFavourite(favouriteTable)
+    fun insertCountry(countryTable: CountryTable) = viewModelScope.launch {
+        repository.insertCountry(countryTable)
     }
 
-    fun deleteFavourite(favouriteTable: FavouriteTable) = viewModelScope.launch {
-        repository.deleteFavourite(favouriteTable)
+    fun deleteCountry(countryTable: CountryTable) = viewModelScope.launch {
+        repository.deleteCountry(countryTable)
     }
 
-    fun updateFavourite(favouriteTable: FavouriteTable) = viewModelScope.launch {
-        repository.updateFavourite(favouriteTable)
+    fun updateCountry(countryTable: CountryTable) = viewModelScope.launch {
+        repository.updateCountry(countryTable)
     }
 
-    fun deleteAllFavourite() = viewModelScope.launch {
-        repository.deleteAllFavouriteList()
+    fun deleteAllCountry() = viewModelScope.launch {
+        repository.deleteAllCountryList()
     }
 
 }

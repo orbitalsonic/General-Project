@@ -1,13 +1,21 @@
 <resources>
     <string name="app_name">General Project</string>
 
-    <!-- _________________________________________________ Toasts _________________________________________________ -->
+    <!-- ________________ Toasts ________________ -->
 
-    <!-- __________________________________________ Content Descriptions __________________________________________ -->
+    <!-- ________________ Content Descriptions ________________ -->
+
     <string name="header_image">Header Image</string>
 
+    <!-- ________________ Menu ________________ -->
 
-    <!-- ___________________________________________________ UI ___________________________________________________ -->
+    <!--menu_delete-->
+    <string name="delete_all_items">Delete All Items</string>
+
+    <!-- ________________ UI ________________ -->
+
+    <!--Home-->
+    <string name="room_database">Room Database</string>
 
     <!-- nav_drawer_content -->
     <string name="privacy_policy">Privacy Policy</string>
@@ -15,4 +23,8 @@
     <string name="rate_us">Rate Us</string>
     <string name="feedback">Feedback</string>
     <string name="update_app">Update App</string>
+
+    <!--EnlistCountry-->
+    <string name="empty_list">No Items Found \n Click \'+\' to add items</string>
+
 </resources>

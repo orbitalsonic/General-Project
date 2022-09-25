@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.orbitalsonic.generalproject.BuildConfig
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.ActivityMainBinding
+import com.orbitalsonic.generalproject.helpers.extensions.Extensions.onBackPress
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.feedback
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.privacyPolicy
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.rateUs
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         setUI()
         initNavController()
+        registerBackPressDispatcher()
         initNavListener()
         initNavDrawerListeners()
     }
@@ -39,6 +41,7 @@ class MainActivity : AppCompatActivity() {
     private fun initNavController() {
         navController = (supportFragmentManager.findFragmentById(binding.navHostFragmentContainer.id) as NavHostFragment).navController
 
+        setSupportActionBar(binding.toolbarMain)
         val appBarConfiguration = AppBarConfiguration(setOf(R.id.fragmentHome), binding.drawerLayoutMain)
         binding.toolbarMain.setupWithNavController(navController, appBarConfiguration)
     }
@@ -86,15 +89,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onBackPressed() {
-        if (binding.drawerLayoutMain.isDrawerOpen(GravityCompat.START)) {
-            binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
-        } else {
-            if (navController.currentDestination?.id == R.id.fragmentHome) {
-                //showExitDialog()
-                super.onBackPressed()
+    private fun registerBackPressDispatcher() {
+        onBackPress {
+            if (binding.drawerLayoutMain.isDrawerOpen(GravityCompat.START)) {
+                binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
             } else {
-                super.onBackPressed()
+                if (navController.currentDestination?.id == R.id.fragmentHome) {
+                    finishAndRemoveTask()
+                } else {
+                    navController.popBackStack()
+                }
             }
         }
     }
