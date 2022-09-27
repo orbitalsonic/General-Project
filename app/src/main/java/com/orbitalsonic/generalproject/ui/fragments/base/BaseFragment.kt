@@ -5,10 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.orbitalsonic.generalproject.helpers.interfaces.SonicBackPressedCallback
 import com.orbitalsonic.generalproject.helpers.koin.DIComponent
 import com.orbitalsonic.generalproject.ui.activities.MainActivity
 
@@ -30,8 +28,6 @@ abstract class BaseFragment<T : ViewDataBinding>(private val layoutId: Int) : Ba
     private var rootView: View? = null
 
     val diComponent = DIComponent()
-
-    private var callback: OnBackPressedCallback? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
@@ -75,22 +71,10 @@ abstract class BaseFragment<T : ViewDataBinding>(private val layoutId: Int) : Ba
      */
     abstract fun onViewCreatedEverytime()
 
-    fun sonicBackPress(sonicBackPressedCallback: SonicBackPressedCallback) {
-        callback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                sonicBackPressedCallback.onSonicBackPressed()
-            }
-        }
-        activity?.let {
-            it.onBackPressedDispatcher.addCallback(it, callback!!)
-        }
-
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        callback?.remove()
     }
 
     override fun onDestroy() {
