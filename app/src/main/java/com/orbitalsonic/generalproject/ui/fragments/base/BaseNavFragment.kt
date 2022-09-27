@@ -60,5 +60,4 @@ abstract class BaseNavFragment : FragmentGeneral() {
     private fun isCurrentDestination(fragment_id: Int): Boolean {
         return findNavController().currentDestination?.id == fragment_id
     }
-
 }

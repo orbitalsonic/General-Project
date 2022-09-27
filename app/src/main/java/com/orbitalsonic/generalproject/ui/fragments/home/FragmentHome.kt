@@ -7,7 +7,6 @@ import com.orbitalsonic.generalproject.ui.fragments.base.BaseFragment
 
 class FragmentHome : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
-
     override fun onViewCreatedOneTime() {
         binding.btnClickHome.setOnClickListener { onContinueClick() }
     }

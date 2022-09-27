@@ -50,10 +50,8 @@ class MainActivity : AppCompatActivity() {
     private fun initNavListener() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.fragmentHome ->
-                    lockDrawer(false)
-                else ->
-                    lockDrawer(true)
+                R.id.fragmentHome -> lockDrawer(false)
+                else -> lockDrawer(true)
             }
         }
     }

@@ -24,5 +24,4 @@ class FragmentCountryDetail : BaseFragment<FragmentCountryDetailBinding>(R.layou
     override fun registerBackPressDispatcher() {
         popFrom(R.id.fragmentCountryDetail)
     }
-
 }

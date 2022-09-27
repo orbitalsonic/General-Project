@@ -15,7 +15,7 @@ class FragmentCountry : BaseFragment<FragmentCountryBinding>(R.layout.fragment_c
 
     override fun onViewCreatedOneTime() {
         initRecyclerView()
-        setUI()
+        fillList()
     }
 
     override fun onViewCreatedEverytime() {
@@ -32,7 +32,7 @@ class FragmentCountry : BaseFragment<FragmentCountryBinding>(R.layout.fragment_c
         binding.rvOriginalListCountry.adapter = adapterCountry
     }
 
-    private fun setUI() = adapterCountry.submitList(dpCountry.countryTableList)
+    private fun fillList() = adapterCountry.submitList(dpCountry.countryTableList)
 
     override fun registerBackPressDispatcher() {
         popFrom(R.id.fragmentCountry)

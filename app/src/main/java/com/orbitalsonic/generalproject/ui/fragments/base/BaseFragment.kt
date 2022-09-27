@@ -71,7 +71,6 @@ abstract class BaseFragment<T : ViewDataBinding>(private val layoutId: Int) : Ba
      */
     abstract fun onViewCreatedEverytime()
 
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
