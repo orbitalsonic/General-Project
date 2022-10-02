@@ -5,12 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.orbitalsonic.generalproject.helpers.koin.DIComponent
 import com.orbitalsonic.generalproject.ui.activities.MainActivity
 
-abstract class BaseFragment<T : ViewDataBinding>(private val layoutId: Int) : BaseNavFragment() {
+abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val layoutId: Int) : BaseNavFragment() {
 
     /**
      *      Must be access (in case of binding & contexts)

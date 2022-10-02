@@ -1,6 +1,5 @@
 package com.orbitalsonic.generalproject.ui.fragments.base
 
-import android.content.Context
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
@@ -12,19 +11,18 @@ abstract class BaseNavFragment : FragmentGeneral() {
     /**
      *  @since : Write Code for BackPress Functionality
      */
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
+    override fun onResume() {
+        super.onResume()
         val callback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                registerBackPressDispatcher()
+                onBackPressed()
                 this.remove()
             }
         }
         (context as FragmentActivity).onBackPressedDispatcher.addCallback(this, callback)
     }
 
-    abstract fun registerBackPressDispatcher()
+    abstract fun onBackPressed()
 
     /**
      *     Used launchWhenCreated, bcz of screen rotation

@@ -26,7 +26,7 @@ class FragmentCountry : BaseFragment<FragmentCountryBinding>(R.layout.fragment_c
         adapterCountry = AdapterCountry(object : OnCountryItemClickListener {
             override fun onCountryClick(countryTable: CountryTable) {
                 diComponent.generalProjectViewModel.insertCountry(countryTable)
-                registerBackPressDispatcher()
+                onBackPressed()
             }
         })
         binding.rvOriginalListCountry.adapter = adapterCountry
@@ -34,7 +34,8 @@ class FragmentCountry : BaseFragment<FragmentCountryBinding>(R.layout.fragment_c
 
     private fun fillList() = adapterCountry.submitList(dpCountry.countryTableList)
 
-    override fun registerBackPressDispatcher() {
+    override fun onBackPressed() {
         popFrom(R.id.fragmentCountry)
     }
+
 }

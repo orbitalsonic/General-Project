@@ -21,7 +21,7 @@ class FragmentCountryDetail : BaseFragment<FragmentCountryDetailBinding>(R.layou
         binding.tvResultsCountryDetail.text = args.countryTable.toString()
     }
 
-    override fun registerBackPressDispatcher() {
+    override fun onBackPressed() {
         popFrom(R.id.fragmentCountryDetail)
     }
 }
