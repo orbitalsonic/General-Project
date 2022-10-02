@@ -1,10 +1,30 @@
 package com.orbitalsonic.generalproject.ui.fragments.base
 
+import android.content.Context
+import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 
-open class BaseNavFragment : FragmentGeneral() {
+abstract class BaseNavFragment : FragmentGeneral() {
+
+    /**
+     *  @since : Write Code for BackPress Functionality
+     */
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                registerBackPressDispatcher()
+                this.remove()
+            }
+        }
+        (context as FragmentActivity).onBackPressedDispatcher.addCallback(this, callback)
+    }
+
+    abstract fun registerBackPressDispatcher()
 
     /**
      *     Used launchWhenCreated, bcz of screen rotation
@@ -40,5 +60,4 @@ open class BaseNavFragment : FragmentGeneral() {
     private fun isCurrentDestination(fragment_id: Int): Boolean {
         return findNavController().currentDestination?.id == fragment_id
     }
-
 }

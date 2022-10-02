@@ -15,9 +15,11 @@ class FragmentHome : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         // For ViewModels
     }
 
-
     private fun onContinueClick() {
         findNavController().navigate(R.id.action_fragmentHome_to_fragmentEnlistCountry)
     }
 
+    override fun registerBackPressDispatcher() {
+
+    }
 }

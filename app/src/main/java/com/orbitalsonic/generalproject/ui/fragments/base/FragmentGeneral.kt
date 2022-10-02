@@ -25,7 +25,6 @@ open class FragmentGeneral : Fragment() {
         return context?.resources?.getString(stringId) ?: ""
     }
 
-
     fun showKeyboard() {
         val imm: InputMethodManager? = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
         imm?.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
@@ -110,7 +109,5 @@ open class FragmentGeneral : Fragment() {
     fun v(tag: String = generalTAG, message: String) {
         Log.v(tag, message)
     }
-
-
 
 }
