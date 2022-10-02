@@ -6,39 +6,39 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.home.FragmentHome">
+        tools:context=".gallery.ui.fragments.gallery.FragmentGallery">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/mb_click_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/room_database"
-            app:layout_constraintBottom_toTopOf="@+id/mb_sample_home"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_images_gallery"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:spanCount="3"
+            tools:listitem="@layout/item_image" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/mb_gallery_home"
+        <ProgressBar
+            android:id="@+id/progressBar_gallery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/gallery"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/mb_sample_home"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_done_gallery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/activity_result"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_done"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mb_click_home" />
+            tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

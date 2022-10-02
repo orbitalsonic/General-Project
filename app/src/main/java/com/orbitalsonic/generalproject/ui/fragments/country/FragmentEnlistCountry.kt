@@ -133,7 +133,7 @@ class FragmentEnlistCountry : BaseFragment<FragmentEnlistCountryBinding>(R.layou
         }
     }
 
-    override fun registerBackPressDispatcher() {
+    override fun onBackPressed() {
         popFrom(R.id.fragmentEnlistCountry)
     }
 }

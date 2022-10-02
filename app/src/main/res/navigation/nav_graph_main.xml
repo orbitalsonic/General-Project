@@ -17,19 +17,33 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentSampleResult"
+            app:destination="@id/fragmentSampleResult"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentPictures"
+            app:destination="@id/fragmentPictures"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/fragmentEnlistCountry"
         android:name="com.orbitalsonic.generalproject.ui.fragments.country.FragmentEnlistCountry"
         android:label="Enlist Countries"
-        tools:layout="@layout/fragment_enlist_country" >
+        tools:layout="@layout/fragment_enlist_country">
         <action
             android:id="@+id/action_fragmentEnlistCountry_to_fragmentCountry"
             app:destination="@id/fragmentCountry"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_fragmentEnlistCountry_to_fragmentCountryDetail"
             app:destination="@id/fragmentCountryDetail" />
@@ -48,4 +62,27 @@
             android:name="country_table"
             app:argType="com.orbitalsonic.generalproject.roomdb.tables.CountryTable" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentSampleResult"
+        android:name="com.orbitalsonic.generalproject.ui.fragments.results.FragmentSampleResult"
+        android:label="fragment_sample_result"
+        tools:layout="@layout/fragment_sample_result" />
+    <fragment
+        android:id="@+id/fragmentPictures"
+        android:name="com.orbitalsonic.generalproject.gallery.ui.fragments.FragmentPictures"
+        android:label="Selected Pictures"
+        tools:layout="@layout/fragment_pictures">
+        <action
+            android:id="@+id/action_fragmentPictures_to_fragmentGallery"
+            app:destination="@id/fragmentGallery"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentGallery"
+        android:name="com.orbitalsonic.generalproject.gallery.ui.fragments.gallery.FragmentGallery"
+        android:label="@string/gallery"
+        tools:layout="@layout/fragment_gallery" />
 </navigation>

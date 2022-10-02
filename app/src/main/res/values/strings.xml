@@ -2,6 +2,7 @@
     <string name="app_name">General Project</string>
 
     <!-- ________________ Toasts ________________ -->
+    <string name="permission_required">Permission Required</string>
 
     <!-- ________________ Content Descriptions ________________ -->
 
@@ -16,6 +17,8 @@
 
     <!--Home-->
     <string name="room_database">Room Database</string>
+    <string name="gallery">Gallery</string>
+    <string name="activity_result"><![CDATA[Activity Results]]></string>
 
     <!-- nav_drawer_content -->
     <string name="privacy_policy">Privacy Policy</string>
@@ -26,5 +29,13 @@
 
     <!--EnlistCountry-->
     <string name="empty_list">No Items Found \n Click \'+\' to add items</string>
+
+    <!-- FragmentSampleResult -->
+    <string name="counter_activity">Counter Activity</string>
+    <string name="results">Results:</string>
+
+    <!--SampleResult-->
+    <string name="type_something">Type Something…</string>
+    <string name="submit">Submit</string>
 
 </resources>
