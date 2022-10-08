@@ -27,7 +27,7 @@ class FragmentSampleResult : BaseFragment<FragmentSampleResultBinding>(R.layout.
         popFrom(R.id.fragmentSampleResult)
     }
 
-    /* _________________________ Apis _________________________ */
+    /* ----------- Apis ----------- */
 
     private val requestActivityResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == Activity.RESULT_OK) {

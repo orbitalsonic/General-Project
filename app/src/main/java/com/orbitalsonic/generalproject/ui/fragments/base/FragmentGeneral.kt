@@ -72,7 +72,7 @@ open class FragmentGeneral : Fragment() {
         showToast(message)
     }
 
-    /* -------------------------------- Snackbar -------------------------------- */
+    /* ----------- Snackbar ----------- */
 
     fun showSnackBar(message: String) {
         this.view?.let { v ->

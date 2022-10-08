@@ -14,7 +14,7 @@ import com.orbitalsonic.generalproject.ui.activities.MainActivity
 abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val layoutId: Int) : BaseNavFragment() {
 
     /**
-     *      Must be access (in case of binding & contexts)
+     *     binding & contexts Must be access
      *          -> after onCreateView
      *          -> before onDestroy
      */
