@@ -47,17 +47,17 @@ class FragmentPictures : BaseFragment<FragmentPicturesBinding>(R.layout.fragment
     }
 
     private fun askForPermission() {
-        requestPermissionLauncher.launch(READ_EXTERNAL_STORAGE)
+        requestPermissionLauncher.launch(arrayOf(READ_EXTERNAL_STORAGE))
     }
 
     override fun onBackPressed() {
         popFrom(R.id.fragmentPictures)
     }
 
-    /* _________________________ Apis _________________________ */
+    /* ---------- Apis ---------- */
 
-    private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
-        if (isGranted) {
+    private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
+        if (permissions[READ_EXTERNAL_STORAGE] == true) {
             onPermissionGranted()
         } else {
             showToast(R.string.permission_required)

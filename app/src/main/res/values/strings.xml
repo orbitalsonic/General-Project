@@ -1,19 +1,19 @@
 <resources>
     <string name="app_name">General Project</string>
 
-    <!-- ________________ Toasts ________________ -->
+    <!-- _________ Toasts _________ -->
     <string name="permission_required">Permission Required</string>
 
-    <!-- ________________ Content Descriptions ________________ -->
+    <!-- _________ Content Descriptions _________ -->
 
     <string name="header_image">Header Image</string>
 
-    <!-- ________________ Menu ________________ -->
+    <!-- _________ Menu _________ -->
 
     <!--menu_delete-->
     <string name="delete_all_items">Delete All Items</string>
 
-    <!-- ________________ UI ________________ -->
+    <!-- _________ UI _________ -->
 
     <!--Home-->
     <string name="room_database">Room Database</string>
