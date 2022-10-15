@@ -6,7 +6,7 @@ private const val isBillingRequireKey = "isBillingRequire"
 
 class SharedPreferenceUtils(private val sharedPreferences: SharedPreferences) {
 
-    /* -------------------------- Billing -------------------------- */
+    /* ---------- Billing ---------- */
 
     var isBillingRequired: Boolean
         get() = sharedPreferences.getBoolean(isBillingRequireKey, true)

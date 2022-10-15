@@ -39,7 +39,7 @@ open class FragmentGeneral : Fragment() {
         inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
-    /* -------------------------------- Toast -------------------------------- */
+    /* ---------- Toast ---------- */
 
     fun showToast(message: String) {
         activity?.let {
@@ -72,7 +72,7 @@ open class FragmentGeneral : Fragment() {
         showToast(message)
     }
 
-    /* ----------- Snackbar ----------- */
+    /* ---------- Snackbar ---------- */
 
     fun showSnackBar(message: String) {
         this.view?.let { v ->
@@ -88,7 +88,7 @@ open class FragmentGeneral : Fragment() {
         }
     }
 
-    /* -------------------------------- Logs -------------------------------- */
+    /* ---------- Logs ---------- */
 
     fun d(tag: String = generalTAG, message: String) {
         Log.d(tag, message)
