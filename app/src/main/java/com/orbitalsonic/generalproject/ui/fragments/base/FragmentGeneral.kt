@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -26,17 +25,27 @@ open class FragmentGeneral : Fragment() {
     }
 
     fun showKeyboard() {
-        val imm: InputMethodManager? = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
-        imm?.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
+        try {
+            val imm: InputMethodManager? = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
+            imm?.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
+        }catch (ex:Exception){
+            ex.recordException("showKeyBoardTag")
+        }
+
     }
 
     fun hideKeyboard() {
-        val inputMethodManager: InputMethodManager = context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-        var view: View? = activity?.currentFocus
-        if (view == null) {
-            view = View(activity)
+        try {
+            val inputMethodManager: InputMethodManager = context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+            var view: View? = activity?.currentFocus
+            if (view == null) {
+                view = View(activity)
+            }
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+        }catch (ex:Exception){
+            ex.recordException("hideKeyboard")
         }
-        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+
     }
 
     /* ---------- Toast ---------- */
@@ -86,28 +95,6 @@ open class FragmentGeneral : Fragment() {
                 }
             }
         }
-    }
-
-    /* ---------- Logs ---------- */
-
-    fun d(tag: String = generalTAG, message: String) {
-        Log.d(tag, message)
-    }
-
-    fun e(tag: String = generalTAG, message: String) {
-        Log.e(tag, message)
-    }
-
-    fun i(tag: String = generalTAG, message: String) {
-        Log.i(tag, message)
-    }
-
-    fun w(tag: String = generalTAG, message: String) {
-        Log.w(tag, message)
-    }
-
-    fun v(tag: String = generalTAG, message: String) {
-        Log.v(tag, message)
     }
 
 }
