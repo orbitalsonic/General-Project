@@ -54,6 +54,7 @@ abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val layoutId
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         if (!hasInitializedRootView) {
             hasInitializedRootView = true
             onViewCreatedOneTime()
@@ -71,6 +72,7 @@ abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val layoutId
      *  @since : Write Code to be called everytime
      */
     abstract fun onViewCreatedEverytime()
+
 
     override fun onDestroyView() {
         super.onDestroyView()

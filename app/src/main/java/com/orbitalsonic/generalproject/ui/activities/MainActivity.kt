@@ -18,6 +18,7 @@ import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.privacyPolicy
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.rateUs
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.shareApp
 import java.util.*
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
@@ -95,6 +96,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 if (navController.currentDestination?.id == R.id.fragmentHome) {
                     finishAndRemoveTask()
+                    exitProcess(0)
                 }
             }
         }
