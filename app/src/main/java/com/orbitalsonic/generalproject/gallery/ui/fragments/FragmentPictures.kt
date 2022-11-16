@@ -54,6 +54,10 @@ class FragmentPictures : BaseFragment<FragmentPicturesBinding>(R.layout.fragment
         popFrom(R.id.fragmentPictures)
     }
 
+    override fun navIconBackPressed() {
+        popFrom(R.id.fragmentPictures)
+    }
+
     /* ---------- Apis ---------- */
 
     private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->

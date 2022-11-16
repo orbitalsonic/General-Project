@@ -34,6 +34,10 @@ class FragmentCountry : BaseFragment<FragmentCountryBinding>(R.layout.fragment_c
 
     private fun fillList() = adapterCountry.submitList(dpCountry.countryTableList)
 
+    override fun navIconBackPressed() {
+        popFrom(R.id.fragmentCountry)
+    }
+
     override fun onBackPressed() {
         popFrom(R.id.fragmentCountry)
     }

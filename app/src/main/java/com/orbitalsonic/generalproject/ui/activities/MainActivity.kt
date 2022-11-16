@@ -1,13 +1,14 @@
 package com.orbitalsonic.generalproject.ui.activities
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.orbitalsonic.generalproject.BuildConfig
 import com.orbitalsonic.generalproject.R
@@ -24,10 +25,12 @@ class MainActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbarMain)
 
         setUI()
         initNavController()
@@ -42,10 +45,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun initNavController() {
         navController = (supportFragmentManager.findFragmentById(binding.navHostFragmentContainer.id) as NavHostFragment).navController
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.fragmentHome), binding.drawerLayoutMain)
+        //binding.toolbarMain.setupWithNavController(navController, appBarConfiguration)
+        binding.navView.setupWithNavController(navController)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+    }
 
-        setSupportActionBar(binding.toolbarMain)
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.fragmentHome), binding.drawerLayoutMain)
-        binding.toolbarMain.setupWithNavController(navController, appBarConfiguration)
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     private fun initNavListener() {
@@ -60,6 +67,10 @@ class MainActivity : AppCompatActivity() {
     private fun lockDrawer(isLock: Boolean) {
         if (isLock) binding.drawerLayoutMain.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
         else binding.drawerLayoutMain.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+    }
+
+    fun openDrawer(){
+        binding.drawerLayoutMain.openDrawer(GravityCompat.START)
     }
 
     private fun initNavDrawerListeners() {
@@ -89,16 +100,27 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun homeBackPressed(){
+        onBack()
+    }
+
     private fun registerBackPressDispatcher() {
         sonicBackPress {
-            if (binding.drawerLayoutMain.isDrawerOpen(GravityCompat.START)) {
-                binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
-            } else {
-                if (navController.currentDestination?.id == R.id.fragmentHome) {
-                    finishAndRemoveTask()
-                    exitProcess(0)
-                }
-            }
+          onBack()
+        }
+    }
+
+    private fun onBack(){
+        if (binding.drawerLayoutMain.isDrawerOpen(GravityCompat.START)) {
+            binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+        } else {
+            showExitDialog()
+        }
+    }
+
+    private fun showExitDialog(){
+        if (navController.currentDestination?.id == R.id.fragmentHome) {
+            navController.navigate(R.id.dialogExit)
         }
     }
 }

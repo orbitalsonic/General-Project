@@ -51,6 +51,10 @@ class FragmentGallery : BaseFragment<FragmentGalleryBinding>(R.layout.fragment_g
         onBackPressed()
     }
 
+    override fun navIconBackPressed() {
+        popFrom(R.id.fragmentGallery)
+    }
+
     override fun onBackPressed() {
         popFrom(R.id.fragmentGallery)
     }

@@ -38,4 +38,9 @@
     <string name="type_something">Type Something…</string>
     <string name="submit">Submit</string>
 
+    <!--Mix-->
+    <string name="exit_message">Do you want to exit?</string>
+    <string name="exit">Exit</string>
+    <string name="cancel">Cancel</string>
+
 </resources>

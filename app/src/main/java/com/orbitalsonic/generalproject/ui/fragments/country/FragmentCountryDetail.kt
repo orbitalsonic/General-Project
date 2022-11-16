@@ -21,6 +21,10 @@ class FragmentCountryDetail : BaseFragment<FragmentCountryDetailBinding>(R.layou
         binding.tvResultsCountryDetail.text = args.countryTable.toString()
     }
 
+    override fun navIconBackPressed() {
+        popFrom(R.id.fragmentCountryDetail)
+    }
+
     override fun onBackPressed() {
         popFrom(R.id.fragmentCountryDetail)
     }

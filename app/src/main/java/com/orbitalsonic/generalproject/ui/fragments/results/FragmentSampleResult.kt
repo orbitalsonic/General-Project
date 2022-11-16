@@ -25,6 +25,10 @@ class FragmentSampleResult : BaseFragment<FragmentSampleResultBinding>(R.layout.
         requestActivityResult.launch(intent)
     }
 
+    override fun navIconBackPressed() {
+        popFrom(R.id.fragmentSampleResult)
+    }
+
     override fun onBackPressed() {
         popFrom(R.id.fragmentSampleResult)
     }

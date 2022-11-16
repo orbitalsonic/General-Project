@@ -54,5 +54,13 @@
         <item name="android:drawablePadding">@dimen/_20sdp</item>
     </style>
 
+    <!-- _________ Dialog _________ -->
+    <style name="CustomRoundedAlertDialog" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.App.CustomDialog.Rounded</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.CustomDialog.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
 
 </resources>

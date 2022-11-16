@@ -1,5 +1,7 @@
 package com.orbitalsonic.generalproject.ui.fragments.base
 
+import android.os.Bundle
+import android.view.MenuItem
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
@@ -16,7 +18,6 @@ abstract class BaseNavFragment : FragmentGeneral() {
         super.onResume()
         val callback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-//                debugToast("handleOnBackPressed()")
                 onBackPressed()
                 this.remove()
             }
@@ -24,7 +25,7 @@ abstract class BaseNavFragment : FragmentGeneral() {
         (context as FragmentActivity).onBackPressedDispatcher.addCallback(this, callback)
     }
 
-  /*  override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
@@ -33,14 +34,15 @@ abstract class BaseNavFragment : FragmentGeneral() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                showToast("onBackPressed()")
-                onBackPressed()
+                navIconBackPressed()
                 true
             }
 
             else -> super.onOptionsItemSelected(item)
         }
-    }*/
+    }
+
+    abstract fun navIconBackPressed()
     abstract fun onBackPressed()
 
     /**

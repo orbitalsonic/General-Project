@@ -133,6 +133,10 @@ class FragmentEnlistCountry : BaseFragment<FragmentEnlistCountryBinding>(R.layou
         }
     }
 
+    override fun navIconBackPressed() {
+        popFrom(R.id.fragmentEnlistCountry)
+    }
+
     override fun onBackPressed() {
         popFrom(R.id.fragmentEnlistCountry)
     }
