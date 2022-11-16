@@ -2,8 +2,6 @@ package com.orbitalsonic.generalproject.ui.fragments.results
 
 import android.app.Activity
 import android.content.Intent
-import android.os.Bundle
-import android.view.MenuItem
 import androidx.activity.result.contract.ActivityResultContracts
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.FragmentSampleResultBinding
