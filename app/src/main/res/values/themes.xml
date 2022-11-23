@@ -26,6 +26,19 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <!-- _________ Toolbar _________ -->
+    <style name="ToolbarTheme" parent="@style/Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="navigationIconTint">@color/white</item>
+        <item name="titleTextAppearance">@style/ToolbarTextAppearance</item>
+    </style>
+
+    <style name="ToolbarTextAppearance">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
     <!-- _________ TextView _________ -->
 
     <style name="CustomTextSmall" parent="TextAppearance.Material3.BodyLarge"/>
