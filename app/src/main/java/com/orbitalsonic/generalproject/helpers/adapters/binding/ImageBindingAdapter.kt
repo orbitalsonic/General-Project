@@ -1,5 +1,6 @@
 package com.orbitalsonic.generalproject.helpers.adapters.binding
 
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import androidx.constraintlayout.utils.widget.ImageFilterView
 import androidx.databinding.BindingAdapter
@@ -68,5 +69,13 @@ fun ImageFilterView.setImageFromAssets(imageAsset: String) {
     Glide
         .with(this)
         .load(Uri.parse("file:///android_asset/flags/$imageAsset.webp"))
+        .into(this)
+}
+
+@BindingAdapter("imageDrawable")
+fun ImageFilterView.setImageFromDrawable(imageDrawable: Drawable) {
+    Glide
+        .with(this)
+        .load(imageDrawable)
         .into(this)
 }
