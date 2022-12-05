@@ -2,6 +2,7 @@ package com.orbitalsonic.generalproject.helpers.adapters.binding
 
 import android.graphics.drawable.Drawable
 import android.net.Uri
+import android.widget.ImageView
 import androidx.constraintlayout.utils.widget.ImageFilterView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -53,6 +54,14 @@ fun ImageFilterView.setImageFromDrawable(imageId: Int) {
     Glide
         .with(this)
         .load(imageId)
+        .into(this)
+}
+
+@BindingAdapter("imageId")
+fun ImageView.setImageFromDrawable(drawable: Drawable) {
+    Glide
+        .with(this)
+        .load(drawable)
         .into(this)
 }
 
