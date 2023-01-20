@@ -82,9 +82,9 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentGallery"
-        android:name="com.orbitalsonic.generalproject.gallery.ui.fragments.gallery.FragmentGallery"
+        android:name="com.orbitalsonic.generalproject.gallery.ui.fragments.gallery.FragmentGalleryMediaStore"
         android:label="@string/gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery_media_store" />
 
     <dialog
         android:id="@+id/dialogExit"

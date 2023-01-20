@@ -3,16 +3,13 @@ package com.orbitalsonic.generalproject.ui.activities
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.ActivitySampleResultBinding
 
-class SampleResult : AppCompatActivity() {
-
-    private val binding by lazy { ActivitySampleResultBinding.inflate(layoutInflater) }
+class SampleResult : BaseActivity<ActivitySampleResultBinding>(R.layout.activity_sample_result) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
 
         binding.mbSubmitSampleResult.setOnClickListener { onSubmitClick() }
     }
@@ -24,9 +21,10 @@ class SampleResult : AppCompatActivity() {
             binding.ltTextSampleResult.isErrorEnabled = true
             return
         }
-        val intent = Intent()
-        intent.putExtra("text", text)
-        setResult(Activity.RESULT_OK, intent)
+        Intent().also {
+            it.putExtra("text", text)
+            setResult(Activity.RESULT_OK, it)
+        }
         finish()
     }
 }

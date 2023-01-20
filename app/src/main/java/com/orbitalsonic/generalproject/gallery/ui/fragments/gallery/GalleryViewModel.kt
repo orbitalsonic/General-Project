@@ -31,9 +31,9 @@ class GalleryViewModel(application: Application) : AndroidViewModel(application)
     private val _selectedPicturesList = ArrayList<Picture>()
     val selectedPicturesList: List<Picture> get() = _selectedPicturesList
 
-    private var exceptionHandler = CoroutineExceptionHandler { _, throwable ->
-        Log.e("SonicTag", ": ${throwable.message}")
-        throwable.recordException("GalleryViewModel: CoroutineExceptionHandler")
+    private var exceptionHandler = CoroutineExceptionHandler { coroutineContext, ex ->
+        Log.e("SonicTag", ": ${ex.message}")
+        ex.recordException("GalleryViewModel: CoroutineExceptionHandler")
     }
 
     fun fetchFiles() {

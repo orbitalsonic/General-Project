@@ -8,21 +8,24 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 
-
 abstract class BaseNavFragment : FragmentGeneral() {
+
+    var callback: OnBackPressedCallback? = null
 
     /**
      *  @since : Write Code for BackPress Functionality
      */
     override fun onResume() {
         super.onResume()
-        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
+        callback?.remove()
+        callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 onBackPressed()
                 this.remove()
             }
+        }.also {
+            (context as FragmentActivity).onBackPressedDispatcher.addCallback(this, it)
         }
-        (context as FragmentActivity).onBackPressedDispatcher.addCallback(this, callback)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

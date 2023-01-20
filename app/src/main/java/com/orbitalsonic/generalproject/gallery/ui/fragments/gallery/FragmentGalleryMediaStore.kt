@@ -5,13 +5,14 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import com.orbitalsonic.generalproject.R
-import com.orbitalsonic.generalproject.databinding.FragmentGalleryBinding
+import com.orbitalsonic.generalproject.databinding.FragmentGalleryMediaStoreBinding
 import com.orbitalsonic.generalproject.gallery.helper.adapters.interfaces.OnPictureItemClickListener
 import com.orbitalsonic.generalproject.gallery.helper.adapters.recyclerView.AdapterGallery
 import com.orbitalsonic.generalproject.gallery.helper.models.Picture
 import com.orbitalsonic.generalproject.ui.fragments.base.BaseFragment
 
-class FragmentGallery : BaseFragment<FragmentGalleryBinding>(R.layout.fragment_gallery) {
+class FragmentGalleryMediaStore :
+    BaseFragment<FragmentGalleryMediaStoreBinding>(R.layout.fragment_gallery_media_store) {
 
     private val viewModel: GalleryViewModel by viewModels()
     private lateinit var adapterGallery: AdapterGallery

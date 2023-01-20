@@ -80,7 +80,6 @@ object SettingUtils {
         }
     }
 
-
     fun Activity?.shareApp() {
         this?.let {
             try {

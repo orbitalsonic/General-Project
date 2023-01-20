@@ -7,7 +7,6 @@ import androidx.fragment.app.DialogFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.DialogExitBinding
-import kotlin.system.exitProcess
 
 class DialogExit : DialogFragment() {
 
@@ -16,7 +15,7 @@ class DialogExit : DialogFragment() {
         binding.mbExitExit.setOnClickListener { onExitClick() }
         binding.mbCancelExit.setOnClickListener { dismiss() }
         isCancelable = false
-        return MaterialAlertDialogBuilder(binding.root.context, R.style.CustomRoundedAlertDialog )
+        return MaterialAlertDialogBuilder(binding.root.context, R.style.CustomRoundedAlertDialog)
             .setView(binding.root)
             .create()
     }
@@ -24,7 +23,6 @@ class DialogExit : DialogFragment() {
     private fun onExitClick() {
         context?.let {
             (it as Activity).finishAndRemoveTask()
-            exitProcess(0)
         } ?: dismiss()
     }
 }

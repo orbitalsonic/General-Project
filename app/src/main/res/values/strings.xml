@@ -42,5 +42,6 @@
     <string name="exit_message">Do you want to exit?</string>
     <string name="exit">Exit</string>
     <string name="cancel">Cancel</string>
+    <string name="todo">TODO</string>
 
 </resources>

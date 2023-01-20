@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.google.android.material.imageview.ShapeableImageView
+            <ImageView
                 android:id="@+id/siv_flag_item_country"
                 android:layout_width="@dimen/_56sdp"
                 android:layout_height="@dimen/_56sdp"
@@ -36,7 +36,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@tools:sample/avatars"
+                android:contentDescription="@string/todo" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/mtv_country_name_item_country"

@@ -21,17 +21,18 @@
         android:layout_height="wrap_content"
         app:debounceClick="@{() -> itemClick.onPictureClick(item)}">
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <ImageView
             android:id="@+id/siv_pic_item_image"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_100sdp"
             android:scaleType="centerCrop"
-            app:imagePath="@{item.file}"
+            app:imageFilePath="@{item.file}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@tools:sample/avatars"
+            android:contentDescription="@string/todo" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/siv_selection_item_image"

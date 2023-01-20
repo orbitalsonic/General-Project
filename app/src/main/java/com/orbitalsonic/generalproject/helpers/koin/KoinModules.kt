@@ -18,7 +18,6 @@ import org.koin.dsl.module
 
 private val applicationScope = CoroutineScope(SupervisorJob())
 
-
 private val viewModelsModules = module {
     single { CountryViewModel() }
 }

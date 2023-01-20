@@ -30,5 +30,4 @@ class DPCountry {
         CountryTable(countryName = "United Keyboard", countryCode = "22", countryFlag = "flag_united_kingdom", city = City(cityName = "Islamabad", cityPostalCode = "51310")),
         CountryTable(countryName = "Vietnam", countryCode = "23", countryFlag = "flag_vietnam", city = City(cityName = "Islamabad", cityPostalCode = "51310")),
     )
-
 }

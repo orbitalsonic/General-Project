@@ -32,6 +32,7 @@ class FragmentHome : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     override fun navIconBackPressed() {
         mainActivity.openDrawer()
     }
+
     override fun onBackPressed() {
         mainActivity.homeBackPressed()
     }
