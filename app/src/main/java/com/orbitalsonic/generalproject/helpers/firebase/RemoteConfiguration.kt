@@ -9,14 +9,14 @@ import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.helpers.firebase.FirebaseUtils.recordException
 import com.orbitalsonic.generalproject.helpers.firebase.RemoteConstants.INTER_SPLASH_KEY
 import com.orbitalsonic.generalproject.helpers.firebase.RemoteConstants.NATIVE_SPLASH_KEY
-import com.orbitalsonic.generalproject.helpers.koin.DIComponent
+import com.orbitalsonic.generalproject.helpers.managers.InternetManager
 
-class RemoteConfiguration(private val diComponent: DIComponent) {
+class RemoteConfiguration(private val internetManager: InternetManager) {
 
     private val configTag = "TAG_REMOTE_CONFIG"
 
     fun checkRemoteConfig(callback: (fetchSuccessfully: Boolean) -> Unit) {
-        if (diComponent.internetManager.isInternetConnected) {
+        if (internetManager.isInternetConnected) {
             val remoteConfig = Firebase.remoteConfig
             val configSettings = remoteConfigSettings { minimumFetchIntervalInSeconds = 2 }
             remoteConfig.setConfigSettingsAsync(configSettings)

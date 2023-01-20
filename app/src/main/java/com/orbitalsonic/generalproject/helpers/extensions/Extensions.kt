@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentContainerView
+import androidx.recyclerview.widget.RecyclerView
 
 object Extensions {
 
@@ -49,5 +50,9 @@ object Extensions {
             window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_VISIBLE)
             window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
         }
+    }
+
+    fun Int.isValidPosition(list: List<Any>): Boolean {
+        return this != RecyclerView.NO_POSITION && list.isNotEmpty() && this < list.size
     }
 }

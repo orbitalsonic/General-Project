@@ -15,6 +15,9 @@
 
     <!-- _________ UI _________ -->
 
+    <!-- StartScreen -->
+    <string name="start_screen">Start Screen</string>
+
     <!--Home-->
     <string name="room_database">Room Database</string>
     <string name="gallery">Gallery</string>
@@ -43,7 +46,9 @@
     <string name="exit">Exit</string>
     <string name="cancel">Cancel</string>
     <string name="todo">TODO</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="language_screen">Language Screen</string>
+    <string name="country">Country</string>
+    <string name="_continue">Continue</string>
+
 
 </resources>

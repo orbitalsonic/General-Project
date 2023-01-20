@@ -18,6 +18,7 @@ import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.feedback
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.privacyPolicy
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.rateUs
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.shareApp
+import com.orbitalsonic.generalproject.ui.activities.base.BaseActivity
 import java.util.*
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {

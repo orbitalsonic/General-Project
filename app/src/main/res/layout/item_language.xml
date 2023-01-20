@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.orbitalsonic.generalproject.helpers.dataModels.LanguageItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/ifv_image_Item_App_Language"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="16dp"
+            app:imageId="@{item.countryFlag}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/flag_en" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtv_language_Item_App_Language"
+            style="@style/CustomTextSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@{item.languageName}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ifv_image_Item_App_Language"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="English" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

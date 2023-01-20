@@ -1,4 +1,4 @@
-package com.orbitalsonic.generalproject.ui.activities
+package com.orbitalsonic.generalproject.ui.activities.base
 
 import android.app.Activity
 import android.content.Context

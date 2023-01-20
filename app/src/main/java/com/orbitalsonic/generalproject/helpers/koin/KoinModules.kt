@@ -3,7 +3,7 @@ package com.orbitalsonic.generalproject.helpers.koin
 import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
-import com.orbitalsonic.generalproject.helpers.dataProvider.DPCountry
+import com.orbitalsonic.generalproject.helpers.firebase.RemoteConfiguration
 import com.orbitalsonic.generalproject.helpers.managers.InternetManager
 import com.orbitalsonic.generalproject.helpers.utils.SharedPreferenceUtils
 import com.orbitalsonic.generalproject.roomdb.db.GeneralProjectDatabase
@@ -13,7 +13,6 @@ import com.orbitalsonic.generalproject.ui.fragments.country.CountryViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import org.koin.android.ext.koin.androidContext
-import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 private val applicationScope = CoroutineScope(SupervisorJob())
@@ -38,4 +37,8 @@ private val dbModule = module {
     single { GeneralProjectViewModel(get()) }
 }
 
-val modulesList = listOf(viewModelsModules, utilsModules, managerModules, dbModule)
+private val firebaseModule = module {
+    single { RemoteConfiguration(get()) }
+}
+
+val modulesList = listOf(viewModelsModules, utilsModules, managerModules, dbModule, firebaseModule)

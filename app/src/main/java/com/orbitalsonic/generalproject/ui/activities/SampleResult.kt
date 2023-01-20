@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.ActivitySampleResultBinding
+import com.orbitalsonic.generalproject.ui.activities.base.BaseActivity
 
 class SampleResult : BaseActivity<ActivitySampleResultBinding>(R.layout.activity_sample_result) {
 
