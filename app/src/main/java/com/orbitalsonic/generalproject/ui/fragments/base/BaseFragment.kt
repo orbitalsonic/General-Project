@@ -43,7 +43,7 @@ abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val layoutId
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         rootView?.let {
             _binding = DataBindingUtil.bind(it)
-            (it.parent as ViewGroup).removeView(rootView)
+            (it.parent as? ViewGroup)?.removeView(rootView)
             return it
         } ?: kotlin.run {
             _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
