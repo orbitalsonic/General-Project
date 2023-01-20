@@ -36,6 +36,8 @@ class RemoteConfiguration(private val diComponent: DIComponent) {
                     updateRemoteValues(callback)
                 } catch (ex: Exception) {
                     ex.recordException("RemoteConfiguration > fetchRemoteValues")
+                    Log.d(configTag, "fetchRemoteValues: ${it.exception}")
+                    callback.invoke(false)
                 }
             } else {
                 Log.d(configTag, "fetchRemoteValues: ${it.exception}")
