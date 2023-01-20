@@ -14,12 +14,22 @@ import com.orbitalsonic.generalproject.ui.activities.MainActivity
 abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val layoutId: Int) : BaseNavFragment() {
 
     /**
-     *     binding & contexts Must be access
+     * These properties are only valid between onCreateView and onDestroyView
+     * @property binding
      *          -> after onCreateView
-     *          -> before onDestroy
+     *          -> before onDestroyView
      */
     private var _binding: T? = null
     val binding get() = _binding!!
+
+    /**
+     * These properties are only valid between onCreateView and onDestroyView
+     * @property globalContext
+     * @property globalActivity
+     * @property mainActivity
+     *          -> after onCreateView
+     *          -> before onDestroyView
+     */
 
     val globalContext by lazy { binding.root.context }
     val globalActivity by lazy { globalContext as Activity }
@@ -31,15 +41,14 @@ abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val layoutId
     val diComponent = DIComponent()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-
         rootView?.let {
             _binding = DataBindingUtil.bind(it)
-            (rootView?.parent as? ViewGroup)?.removeView(rootView)
+            (it.parent as ViewGroup).removeView(rootView)
             return it
         } ?: kotlin.run {
             _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
             rootView = binding.root
-            return rootView!!
+            return binding.root
         }
     }
 
@@ -53,26 +62,22 @@ abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val layoutId
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
         if (!hasInitializedRootView) {
             hasInitializedRootView = true
             onViewCreatedOneTime()
         }
-
         onViewCreatedEverytime()
     }
 
     /**
-     *  @since : Write Code to be called onetime
+     *  @since : Write code to be called onetime...
      */
     abstract fun onViewCreatedOneTime()
 
     /**
-     *  @since : Write Code to be called everytime
+     *  @since : Write code to be called everytime...
      */
     abstract fun onViewCreatedEverytime()
-
 
     override fun onDestroyView() {
         super.onDestroyView()

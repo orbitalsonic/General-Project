@@ -53,7 +53,16 @@ abstract class BaseNavFragment : FragmentGeneral() {
      *     Used launchWhenResumed, bcz of screen rotation
      * @param fragment_id : Current Fragment's Id (from Nav Graph)
      * @param action : Action / Id of other fragment
+     * @param bundle : Pass bundle as a NavArgs to destination.
      */
+
+    protected fun navigateTo(fragment_id: Int, action: Int, bundle: Bundle) {
+        lifecycleScope.launchWhenCreated {
+            if (isAdded && isCurrentDestination(fragment_id)) {
+                findNavController().navigate(action, bundle)
+            }
+        }
+    }
 
     protected fun navigateTo(fragment_id: Int, action: Int) {
         lifecycleScope.launchWhenCreated {

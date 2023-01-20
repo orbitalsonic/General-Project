@@ -25,26 +25,6 @@ open class FragmentGeneral : Fragment() {
         return context?.resources?.getString(stringId) ?: ""
     }
 
-    protected fun showKeyboard() {
-        try {
-            val imm: InputMethodManager? = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
-            imm?.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
-        }catch (ex:Exception){
-            ex.recordException("showKeyBoardTag")
-        }
-
-    }
-    protected fun hideKeyboard() {
-        try {
-            val inputMethodManager: InputMethodManager = context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-            val view: IBinder? = activity?.findViewById<View?>(android.R.id.content)?.windowToken
-            inputMethodManager.hideSoftInputFromWindow(view, 0)
-        } catch (ex: Exception) {
-            ex.recordException("hideKeyboard")
-        }
-
-    }
-
     /* ---------- Toast ---------- */
 
     protected fun showToast(message: String) {
@@ -60,16 +40,8 @@ open class FragmentGeneral : Fragment() {
     }
 
     protected fun debugToast(message: String) {
-        activity?.let {
-            try {
-                it.runOnUiThread {
-                    if (BuildConfig.DEBUG) {
-                        Toast.makeText(it, message, Toast.LENGTH_SHORT).show()
-                    }
-                }
-            } catch (ex: Exception) {
-                ex.recordException("debugToast : ${it.javaClass.simpleName}")
-            }
+        if (BuildConfig.DEBUG) {
+            showToast(message)
         }
     }
 
@@ -94,4 +66,24 @@ open class FragmentGeneral : Fragment() {
         }
     }
 
+    /* ---------- Keyboard (Input Method) ---------- */
+
+    protected fun showKeyboard() {
+        try {
+            val imm: InputMethodManager? = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
+            imm?.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
+        }catch (ex:Exception){
+            ex.recordException("showKeyBoardTag")
+        }
+    }
+
+    protected fun hideKeyboard() {
+        try {
+            val inputMethodManager: InputMethodManager = context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+            val view: IBinder? = activity?.findViewById<View?>(android.R.id.content)?.windowToken
+            inputMethodManager.hideSoftInputFromWindow(view, 0)
+        } catch (ex: Exception) {
+            ex.recordException("hideKeyboard")
+        }
+    }
 }
