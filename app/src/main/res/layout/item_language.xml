@@ -5,39 +5,57 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="item"
             type="com.orbitalsonic.generalproject.helpers.dataModels.LanguageItem" />
+
+        <variable
+            name="itemClick"
+            type="com.orbitalsonic.generalproject.helpers.interfaces.OnLanguageItemClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> itemClick.onItemClick(item)}">
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:id="@+id/ifv_image_Item_App_Language"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:id="@+id/ifv_icon_item_language"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginVertical="8dp"
-            android:layout_marginStart="16dp"
             app:imageId="@{item.countryFlag}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/flag_en" />
+            app:roundPercent="1"
+            tools:srcCompat="@tools:sample/avatars" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/mtv_language_Item_App_Language"
-            style="@style/CustomTextSmall"
+            android:id="@+id/mtv_language_item_language"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
+            android:layout_margin="16dp"
             android:text="@{item.languageName}"
+            app:layout_constraintBottom_toBottomOf="@+id/ifv_icon_item_language"
+            app:layout_constraintEnd_toStartOf="@+id/siv_done_item_language"
+            app:layout_constraintStart_toEndOf="@+id/ifv_icon_item_language"
+            app:layout_constraintTop_toTopOf="@+id/ifv_icon_item_language"
+            tools:text="@string/app_name" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/siv_done_item_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:visibility="@{item.selected? View.VISIBLE : View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ifv_image_Item_App_Language"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="English" />
+            app:srcCompat="@drawable/ic_done" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

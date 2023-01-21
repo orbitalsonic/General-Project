@@ -1,16 +1,20 @@
 package com.orbitalsonic.generalproject.ui.fragments.splash
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import com.orbitalsonic.generalproject.R
-import com.orbitalsonic.generalproject.databinding.FragmentLanguageBinding
+import com.orbitalsonic.generalproject.databinding.FragmentSplashLanguageBinding
 import com.orbitalsonic.generalproject.helpers.adapters.listView.AdapterLanguage
+import com.orbitalsonic.generalproject.helpers.dataModels.LanguageItem
 import com.orbitalsonic.generalproject.helpers.dataProvider.DpLanguages
 import com.orbitalsonic.generalproject.ui.activities.MainActivity
 import com.orbitalsonic.generalproject.ui.fragments.base.BaseFragment
 
-class FragmentLanguage : BaseFragment<FragmentLanguageBinding>(R.layout.fragment_language) {
+class FragmentSplashLanguage : BaseFragment<FragmentSplashLanguageBinding>(R.layout.fragment_splash_language) {
 
     private val dpLanguages by lazy { DpLanguages() }
+    private var languageItem: LanguageItem? = null
     private val adapterLanguage by lazy {
         AdapterLanguage(
             globalContext,
@@ -27,20 +31,30 @@ class FragmentLanguage : BaseFragment<FragmentLanguageBinding>(R.layout.fragment
     override fun onViewCreatedEverytime() {}
 
     private fun initLanguages() = binding.actDropDownLanguage.apply {
-        val defaultLanguage = dpLanguages.getLanguagesList()[0]
-        setText(defaultLanguage.languageName, false)
+        languageItem = dpLanguages.getLanguagesList()[0].also {
+            setText(it.languageName, false)
+        }
         setAdapter(adapterLanguage)
         setOnItemClickListener { parent, view, position, id ->
-            val language = dpLanguages.getLanguagesList()[position]
-            diComponent.sharedPreferenceUtils.selectedLanguageCode = language.languageCode
-            setText(language.languageName, false)
+            languageItem = dpLanguages.getLanguagesList()[position].also {
+                setText(it.languageName, false)
+            }
         }
     }
 
+    /**
+     * Add Service in Manifest first
+     */
+
     private fun onContinueClick() {
-        //diComponent.sharedPreferenceUtils.showFirstScreen = false
-        startActivity(Intent(globalActivity, MainActivity::class.java))
-        globalActivity.finish()
+        languageItem?.let {
+            diComponent.sharedPreferenceUtils.selectedLanguageCode = it.languageCode
+            val appLocale: LocaleListCompat = LocaleListCompat.forLanguageTags(it.languageCode)
+            AppCompatDelegate.setApplicationLocales(appLocale)
+            diComponent.sharedPreferenceUtils.showFirstScreen = false
+            startActivity(Intent(globalActivity, MainActivity::class.java))
+            globalActivity.finish()
+        }
     }
 
     override fun navIconBackPressed() {}

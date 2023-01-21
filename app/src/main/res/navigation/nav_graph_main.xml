@@ -31,6 +31,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentLanguage"
+            app:destination="@id/fragmentLanguage"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/fragmentEnlistCountry"
@@ -91,4 +98,9 @@
         android:name="com.orbitalsonic.generalproject.ui.dialogs.DialogExit"
         android:label="fragment_dialog_exit"
         tools:layout="@layout/dialog_exit" />
+    <fragment
+        android:id="@+id/fragmentLanguage"
+        android:name="com.orbitalsonic.generalproject.ui.fragments.languages.FragmentLanguage"
+        android:label="fragment_language"
+        tools:layout="@layout/fragment_language" />
 </navigation>
