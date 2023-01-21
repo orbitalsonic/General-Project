@@ -10,6 +10,7 @@ class FragmentHome : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         binding.mbClickHome.setOnClickListener { onContinueClick() }
         binding.mbGalleryHome.setOnClickListener { onGalleryClick() }
         binding.mbSampleHome.setOnClickListener { onSampleClick() }
+        binding.mbLanguageHome.setOnClickListener { onLanguageClick() }
     }
 
     override fun onViewCreatedEverytime() {
@@ -28,6 +29,9 @@ class FragmentHome : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         navigateTo(R.id.fragmentHome, R.id.action_fragmentHome_to_fragmentSampleResult)
     }
 
+    private fun onLanguageClick() {
+        navigateTo(R.id.fragmentHome, R.id.action_fragmentHome_to_fragmentLanguage)
+    }
 
     override fun navIconBackPressed() {
         mainActivity.openDrawer()
