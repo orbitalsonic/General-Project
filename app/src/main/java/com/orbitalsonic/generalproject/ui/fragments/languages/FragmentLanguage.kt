@@ -1,13 +1,13 @@
 package com.orbitalsonic.generalproject.ui.fragments.languages
 
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.os.LocaleListCompat
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.FragmentLanguageBinding
 import com.orbitalsonic.generalproject.helpers.adapters.recyclerView.AdapterLanguage
 import com.orbitalsonic.generalproject.helpers.dataModels.LanguageItem
 import com.orbitalsonic.generalproject.helpers.dataProvider.DpLanguages
 import com.orbitalsonic.generalproject.helpers.interfaces.OnLanguageItemClickListener
+import com.orbitalsonic.generalproject.helpers.listeners.DebounceListener.setDebounceClickListener
 import com.orbitalsonic.generalproject.ui.fragments.base.BaseFragment
 
 class FragmentLanguage : BaseFragment<FragmentLanguageBinding>(R.layout.fragment_language), OnLanguageItemClickListener {
@@ -20,7 +20,7 @@ class FragmentLanguage : BaseFragment<FragmentLanguageBinding>(R.layout.fragment
         initRecyclerView()
         fillList()
 
-        binding.mbSubmitLanguage.setOnClickListener { onSubmitClick() }
+        binding.mbSubmitLanguage.setDebounceClickListener { onSubmitClick() }
     }
 
     override fun onViewCreatedEverytime() {}
@@ -44,8 +44,7 @@ class FragmentLanguage : BaseFragment<FragmentLanguageBinding>(R.layout.fragment
     private fun onSubmitClick() {
         languageItem?.let {
             diComponent.sharedPreferenceUtils.selectedLanguageCode = it.languageCode
-            val appLocale: LocaleListCompat = LocaleListCompat.forLanguageTags(it.languageCode)
-            AppCompatDelegate.setApplicationLocales(appLocale)
+            globalActivity.recreate()
         }
         popFrom(R.id.fragmentLanguage)
     }

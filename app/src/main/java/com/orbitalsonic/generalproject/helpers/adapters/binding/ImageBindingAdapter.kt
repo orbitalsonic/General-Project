@@ -3,6 +3,7 @@ package com.orbitalsonic.generalproject.helpers.adapters.binding
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import java.io.File

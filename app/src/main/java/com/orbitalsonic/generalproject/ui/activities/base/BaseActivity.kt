@@ -16,12 +16,20 @@ import androidx.databinding.ViewDataBinding
 import com.orbitalsonic.generalproject.BuildConfig
 import com.orbitalsonic.generalproject.helpers.firebase.FirebaseUtils.recordException
 import com.orbitalsonic.generalproject.helpers.koin.DIComponent
+import com.orbitalsonic.generalproject.helpers.utils.LocaleHelper
 
-abstract class BaseActivity<T: ViewDataBinding>(@LayoutRes layoutId : Int): AppCompatActivity() {
+abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes layoutId: Int) : AppCompatActivity() {
 
     private val generalTAG = "GeneralTAG"
 
-    protected val binding by lazy { DataBindingUtil.inflate<T>(layoutInflater, layoutId, null, false) }
+    protected val binding by lazy {
+        DataBindingUtil.inflate<T>(
+            layoutInflater,
+            layoutId,
+            null,
+            false
+        )
+    }
     protected val diComponent by lazy { DIComponent() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,16 +43,18 @@ abstract class BaseActivity<T: ViewDataBinding>(@LayoutRes layoutId : Int): AppC
 
     protected fun showKeyboard() {
         try {
-            val imm: InputMethodManager? = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
+            val imm: InputMethodManager? =
+                getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
             imm?.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
-        }catch (ex:Exception){
+        } catch (ex: Exception) {
             ex.recordException("showKeyBoardTag")
         }
     }
 
     protected fun hideKeyboard() {
         try {
-            val inputMethodManager: InputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+            val inputMethodManager: InputMethodManager =
+                getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
             val view: IBinder? = findViewById<View?>(android.R.id.content)?.windowToken
             inputMethodManager.hideSoftInputFromWindow(view, 0)
         } catch (ex: Exception) {
@@ -74,5 +84,14 @@ abstract class BaseActivity<T: ViewDataBinding>(@LayoutRes layoutId : Int): AppC
         } catch (ex: Exception) {
             ex.recordException("debugToast : ${javaClass.simpleName}")
         }
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(
+            LocaleHelper.setLocale(
+                newBase,
+                diComponent.sharedPreferenceUtils.selectedLanguageCode
+            )
+        )
     }
 }

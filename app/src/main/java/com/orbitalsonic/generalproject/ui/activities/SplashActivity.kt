@@ -1,6 +1,8 @@
 package com.orbitalsonic.generalproject.ui.activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.navigation.fragment.NavHostFragment
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.ActivitySplashBinding
@@ -10,7 +12,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(R.layout.activity_spl
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Log.d("GeneralTAG", "onCreate: SplashActivity")
         checkCaseType()
     }
 
@@ -18,6 +20,11 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(R.layout.activity_spl
         if (diComponent.sharedPreferenceUtils.showFirstScreen) {
             navigateScreen()
         }
+    }
+
+    fun nextActivity(){
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 
     private fun navigateScreen() {

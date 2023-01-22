@@ -22,9 +22,9 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentStart"
-        android:name="com.orbitalsonic.generalproject.ui.fragments.splash.FragmentStart"
+        android:name="com.orbitalsonic.generalproject.ui.fragments.splash.FragmentSplashStart"
         android:label="fragment_start"
-        tools:layout="@layout/fragment_start">
+        tools:layout="@layout/fragment_splash_start">
         <action
             android:id="@+id/action_fragmentStart_to_fragmentLanguage"
             app:destination="@id/fragmentSplashLanguage"

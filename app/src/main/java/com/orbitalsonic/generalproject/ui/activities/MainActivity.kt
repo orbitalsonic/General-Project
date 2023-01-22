@@ -1,6 +1,7 @@
 package com.orbitalsonic.generalproject.ui.activities
 
 import android.os.Bundle
+import android.util.Log
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -33,7 +34,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setSupportActionBar(binding.toolbarMain)
-
+        Log.d("GeneralTAG", "onCreate: MainActivity")
         setUI()
         initNavController()
         registerBackPressDispatcher()
