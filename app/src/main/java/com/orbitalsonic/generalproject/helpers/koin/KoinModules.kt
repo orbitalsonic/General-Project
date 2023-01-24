@@ -5,7 +5,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import com.orbitalsonic.generalproject.helpers.firebase.RemoteConfiguration
 import com.orbitalsonic.generalproject.helpers.managers.InternetManager
-import com.orbitalsonic.generalproject.helpers.utils.SharedPreferenceUtils
+import com.orbitalsonic.generalproject.helpers.preferences.SharedPreferenceUtils
 import com.orbitalsonic.generalproject.roomdb.db.GeneralProjectDatabase
 import com.orbitalsonic.generalproject.roomdb.repository.GeneralProjectRepository
 import com.orbitalsonic.generalproject.roomdb.viewmodel.GeneralProjectViewModel

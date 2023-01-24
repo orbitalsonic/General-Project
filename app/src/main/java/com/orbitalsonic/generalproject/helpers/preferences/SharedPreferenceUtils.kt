@@ -1,4 +1,4 @@
-package com.orbitalsonic.generalproject.helpers.utils
+package com.orbitalsonic.generalproject.helpers.preferences
 
 import android.content.SharedPreferences
 
