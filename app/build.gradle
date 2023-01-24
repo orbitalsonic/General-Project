@@ -100,7 +100,7 @@ dependencies {
     androidTestImplementation "androidx.room:room-testing:2.5.0"
 
     // firebase configuration
-    implementation platform('com.google.firebase:firebase-bom:30.4.1')
+    implementation platform('com.google.firebase:firebase-bom:31.2.0')
     // Firebase Remote Config (Kotlin)
     implementation 'com.google.firebase:firebase-config-ktx'
     // Firebase Analytics (Kotlin)
