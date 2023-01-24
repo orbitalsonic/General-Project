@@ -2,15 +2,16 @@ package com.orbitalsonic.generalproject.ui.fragments.home
 
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.FragmentHomeBinding
+import com.orbitalsonic.generalproject.helpers.listeners.DebounceListener.setDebounceClickListener
 import com.orbitalsonic.generalproject.ui.fragments.base.BaseFragment
 
 class FragmentHome : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     override fun onViewCreatedOneTime() {
-        binding.mbClickHome.setOnClickListener { onContinueClick() }
-        binding.mbGalleryHome.setOnClickListener { onGalleryClick() }
-        binding.mbSampleHome.setOnClickListener { onSampleClick() }
-        binding.mbLanguageHome.setOnClickListener { onLanguageClick() }
+        binding.mbClickHome.setDebounceClickListener { onContinueClick() }
+        binding.mbGalleryHome.setDebounceClickListener { onGalleryClick() }
+        binding.mbSampleHome.setDebounceClickListener { onSampleClick() }
+        binding.mbLanguageHome.setDebounceClickListener { onLanguageClick() }
     }
 
     override fun onViewCreatedEverytime() {
