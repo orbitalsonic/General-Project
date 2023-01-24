@@ -2,7 +2,7 @@ package com.orbitalsonic.generalproject.helpers.preferences
 
 import android.content.SharedPreferences
 
-private const val isBillingRequireKey = "isBillingRequire"
+private const val billingRequireKey = "isAppPurchased"
 private const val isShowFirstScreenKey = "showFirstScreen"
 private const val selectedLanguageCodeKey = "selectedLanguageCode"
 
@@ -11,10 +11,10 @@ class SharedPreferenceUtils(private val sharedPreferences: SharedPreferences) {
     /* ---------- Billing ---------- */
 
     var isAppPurchased: Boolean
-        get() = sharedPreferences.getBoolean(isBillingRequireKey, false)
+        get() = sharedPreferences.getBoolean(billingRequireKey, false)
         set(value) {
             sharedPreferences.edit().apply {
-                putBoolean(isBillingRequireKey, value)
+                putBoolean(billingRequireKey, value)
                 apply()
             }
         }
