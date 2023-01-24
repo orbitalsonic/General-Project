@@ -10,8 +10,8 @@ class SharedPreferenceUtils(private val sharedPreferences: SharedPreferences) {
 
     /* ---------- Billing ---------- */
 
-    var isBillingRequired: Boolean
-        get() = sharedPreferences.getBoolean(isBillingRequireKey, true)
+    var isAppPurchased: Boolean
+        get() = sharedPreferences.getBoolean(isBillingRequireKey, false)
         set(value) {
             sharedPreferences.edit().apply {
                 putBoolean(isBillingRequireKey, value)
