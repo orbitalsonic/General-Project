@@ -13,9 +13,6 @@ class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
-        EventsProvider.HOME_SCREEN.postFirebaseEvent()
-
         initKoin()
     }
 

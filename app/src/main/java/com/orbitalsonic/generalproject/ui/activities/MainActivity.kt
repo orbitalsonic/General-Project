@@ -34,7 +34,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setSupportActionBar(binding.toolbarMain)
-        Log.d("GeneralTAG", "onCreate: MainActivity")
         setUI()
         initNavController()
         registerBackPressDispatcher()
