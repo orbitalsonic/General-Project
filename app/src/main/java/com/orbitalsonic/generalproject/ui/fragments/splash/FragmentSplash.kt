@@ -27,4 +27,5 @@ class FragmentSplash : BaseFragment<FragmentSplashBinding>(R.layout.fragment_spl
             }
         }
     }
+
 }
