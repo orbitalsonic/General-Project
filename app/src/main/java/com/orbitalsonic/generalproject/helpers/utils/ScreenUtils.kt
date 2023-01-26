@@ -11,6 +11,12 @@ object ScreenUtils {
     private const val defaultScreenWidth = 350
     private const val defaultScreenHeight = 700
 
+   /*
+    binding.myLayout.requestLayout()
+    binding.myLayout.layoutParams.width =  (activity.getScreenWidth() * .90).toInt()
+    binding.myLayout.layoutParams.height =  (activity.getScreenHeight() * .90).toInt()
+    */
+
     fun Activity?.getScreenWidth(): Int {
         this?.let {
             try {
