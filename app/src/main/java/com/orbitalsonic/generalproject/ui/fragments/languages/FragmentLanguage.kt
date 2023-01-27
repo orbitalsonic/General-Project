@@ -1,6 +1,5 @@
 package com.orbitalsonic.generalproject.ui.fragments.languages
 
-import androidx.appcompat.app.AppCompatDelegate
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.FragmentLanguageBinding
 import com.orbitalsonic.generalproject.helpers.adapters.recyclerView.AdapterLanguage
@@ -30,8 +29,7 @@ class FragmentLanguage : BaseFragment<FragmentLanguageBinding>(R.layout.fragment
     }
 
     private fun fillList() {
-        val languageCode = AppCompatDelegate.getApplicationLocales().toLanguageTags()
-        val list = dpLanguages.getLanguagesList(languageCode)
+        val list = dpLanguages.getLanguagesList(diComponent.sharedPreferenceUtils.selectedLanguageCode)
         adapterLanguage.submitList(list)
     }
 
