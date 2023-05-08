@@ -3,6 +3,7 @@ package com.orbitalsonic.generalproject.helpers.extensions
 import android.app.Activity
 import android.os.Build
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.activity.OnBackPressedCallback
@@ -54,5 +55,16 @@ object Extensions {
 
     fun Int.isValidPosition(list: List<Any>): Boolean {
         return this != RecyclerView.NO_POSITION && list.isNotEmpty() && this < list.size
+    }
+
+    /**
+     *  -> e.g. frameLayout.addCleanView(adView)
+     * @param  view: Here AdView is Child
+     */
+
+    fun ViewGroup.addCleanView(view: View?) {
+        (view?.parent as? ViewGroup)?.removeView(view)
+        this.removeAllViews()
+        this.addView(view)
     }
 }

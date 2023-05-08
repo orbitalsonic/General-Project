@@ -2,54 +2,96 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.splash.FragmentSplashLanguage">
+        android:background="@color/white"
+        >
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/mtv_title_language"
-            style="@style/CustomTextMediumBold"
+        <ImageView
+            android:id="@+id/iv_header"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            tools:src="@drawable/ic_header_icon"
+            app:imageDrawable="@{@drawable/ic_header_icon}"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:id="@+id/tv_title_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="32dp"
-            android:text="@string/language_screen"
-            android:textAlignment="center"
+            android:text="@string/app_name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            android:gravity="start|center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@+id/iv_header"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/iv_header"
+            app:layout_constraintBottom_toBottomOf="@id/iv_header"
+            />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tl_drop_down_language"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        <TextView
+            android:id="@+id/tv_message_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="32dp"
-            android:layout_marginTop="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mtv_title_language">
+            android:text="@string/select_your_language"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:gravity="start|center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@+id/iv_header"
+            app:layout_constraintEnd_toStartOf="@+id/btn_continue"
+            app:layout_constraintTop_toBottomOf="@+id/iv_header"
+            />
 
-            <AutoCompleteTextView
-                android:id="@+id/act_drop_down_language"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/country"
-                android:inputType="none" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/mb_continue_language"
+        <TextView
+            android:id="@+id/btn_continue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/_continue"
+            android:text="@string/continue_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_12ssp"
+            android:gravity="start|center"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:background="?selectableItemBackground"
+            android:paddingVertical="@dimen/_7sdp"
+            android:paddingHorizontal="@dimen/_2sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_header"
+            android:drawablePadding="@dimen/_5sdp"
+            app:drawableTint="@color/colorPrimary"
+            app:drawableEndCompat="@drawable/baseline_navigate_next_24" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lang_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tl_drop_down_language" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_continue"
+            tools:listitem="@layout/item_language" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

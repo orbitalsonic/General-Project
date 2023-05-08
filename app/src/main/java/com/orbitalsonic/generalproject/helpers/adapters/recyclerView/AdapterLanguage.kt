@@ -2,6 +2,7 @@ package com.orbitalsonic.generalproject.helpers.adapters.recyclerView
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -24,6 +25,17 @@ class AdapterLanguage(private val onLanguageItemClickListener: OnLanguageItemCli
         holder.binding.apply {
             item = currentItem
             itemClick = onLanguageItemClickListener
+
+            /**
+             *         Selector did not work in xml if you are using only drawable not selector use it in xml file
+             *         android:background="@{item.isSelected ? @drawable/bg_lang_selected : @drawable/bg_lang_unselected}"
+             */
+
+            langItemLayout.background = if (currentItem.isSelected) {
+                ContextCompat.getDrawable(root.context, R.drawable.bg_lang_selected)
+            } else {
+                ContextCompat.getDrawable(root.context, R.drawable.bg_lang_unselected)
+            }
         }
     }
 

@@ -94,4 +94,6 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes layoutId: Int) : App
             )
         )
     }
+
+    abstract fun onRecreate()
 }

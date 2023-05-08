@@ -43,6 +43,9 @@ class RemoteConfiguration(private val internetManager: InternetManager) {
                 Log.d(configTag, "fetchRemoteValues: ${it.exception}")
                 callback.invoke(false)
             }
+        }.addOnFailureListener {
+            Log.d(configTag, "fetchRemoteValues: ${it.message}")
+            callback.invoke(false)
         }
     }
 

@@ -1,7 +1,6 @@
 package com.orbitalsonic.generalproject.ui.activities
 
 import android.os.Bundle
-import android.util.Log
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -11,10 +10,13 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.orbitalsonic.generalproject.BuildConfig
+import com.orbitalsonic.generalproject.MainNavGraphDirections
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.ActivityMainBinding
 import com.orbitalsonic.generalproject.helpers.extensions.Extensions.sonicBackPress
+import com.orbitalsonic.generalproject.helpers.listeners.DebounceListener.setDebounceClickListener
 import com.orbitalsonic.generalproject.helpers.utils.CleanMemory
+import com.orbitalsonic.generalproject.helpers.utils.CleanMemory.isActivityRecreated
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.feedback
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.privacyPolicy
 import com.orbitalsonic.generalproject.helpers.utils.SettingUtils.rateUs
@@ -63,8 +65,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private fun initNavListener() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.fragmentHome -> lockDrawer(false)
-                else -> lockDrawer(true)
+                R.id.fragmentHome -> {
+                    lockDrawer(false)
+                    setToolbarIcon(R.drawable.ic_nav_option)
+                }
+                else -> {
+                    lockDrawer(true)
+                    setToolbarIcon(R.drawable.ic_nav_back)
+                }
             }
         }
     }
@@ -78,30 +86,45 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         binding.drawerLayoutMain.openDrawer(GravityCompat.START)
     }
 
+    private fun setToolbarIcon(icon:Int) {
+        binding.toolbarMain.setNavigationIcon(icon)
+    }
+
     private fun initNavDrawerListeners() {
-        binding.includeDrawer.navPrivacyPolicy.setOnClickListener {
+        binding.includeDrawer.navChangeLanguge.setDebounceClickListener {
+            binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+            val action = MainNavGraphDirections.actionFragmentLanguage()
+            navController.navigate(action)
+        }
+
+        binding.includeDrawer.navPrivacyPolicy.setDebounceClickListener {
             binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
             privacyPolicy()
         }
 
-        binding.includeDrawer.navShareApp.setOnClickListener {
+        binding.includeDrawer.navShareApp.setDebounceClickListener {
             binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
             shareApp()
         }
 
-        binding.includeDrawer.navRateUs.setOnClickListener {
+        binding.includeDrawer.navRateUs.setDebounceClickListener {
             binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
             rateUs()
         }
 
-        binding.includeDrawer.navFeedback.setOnClickListener {
+        binding.includeDrawer.navFeedback.setDebounceClickListener {
             binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
             feedback()
         }
 
-        binding.includeDrawer.navUpdateApp.setOnClickListener {
+        binding.includeDrawer.navUpdateApp.setDebounceClickListener {
             binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
             rateUs()
+        }
+
+        binding.includeDrawer.navRemoveAds.setDebounceClickListener {
+            binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+            showToast("Action Remove Ads")
         }
     }
 
@@ -134,8 +157,18 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
      *  This destroys all the resources
      */
 
+
+    override fun onRecreate() {
+        isActivityRecreated = true
+        recreate()
+    }
+
     override fun onDestroy() {
-        CleanMemory.clean()
+        if (!isActivityRecreated){
+            CleanMemory.clean()
+        }else{
+            isActivityRecreated = false
+        }
         super.onDestroy()
     }
 }

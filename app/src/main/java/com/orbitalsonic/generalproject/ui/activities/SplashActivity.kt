@@ -35,4 +35,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(R.layout.activity_spl
         }
         navController.graph = navGraph
     }
+
+    override fun onRecreate() {}
 }

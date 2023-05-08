@@ -4,11 +4,23 @@ import android.content.SharedPreferences
 
 private const val billingRequireKey = "isAppPurchased"
 private const val isShowFirstScreenKey = "showFirstScreen"
+private const val firstTimeAskingPermission = "firstTimeAskingPermission"
 private const val selectedLanguageCodeKey = "selectedLanguageCode"
 
 class SharedPreferenceUtils(private val sharedPreferences: SharedPreferences) {
 
     /* ---------- Billing ---------- */
+
+    var isFirstTimeAskingPermission: Boolean
+        get() = sharedPreferences.getBoolean(firstTimeAskingPermission, true)
+        set(value) {
+            sharedPreferences.edit().apply {
+                putBoolean(firstTimeAskingPermission, value)
+                apply()
+            }
+        }
+
+    /* ---------- Permission ---------- */
 
     var isAppPurchased: Boolean
         get() = sharedPreferences.getBoolean(billingRequireKey, false)

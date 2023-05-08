@@ -2,49 +2,51 @@ package com.orbitalsonic.generalproject.ui.fragments.languages
 
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.FragmentLanguageBinding
-import com.orbitalsonic.generalproject.helpers.adapters.recyclerView.AdapterLanguage
+import com.orbitalsonic.generalproject.helpers.adapters.listView.AdapterLanguage
 import com.orbitalsonic.generalproject.helpers.dataModels.LanguageItem
 import com.orbitalsonic.generalproject.helpers.dataProvider.DpLanguages
-import com.orbitalsonic.generalproject.helpers.interfaces.OnLanguageItemClickListener
-import com.orbitalsonic.generalproject.helpers.listeners.DebounceListener.setDebounceClickListener
+import com.orbitalsonic.generalproject.ui.activities.MainActivity
 import com.orbitalsonic.generalproject.ui.fragments.base.BaseFragment
 
-class FragmentLanguage : BaseFragment<FragmentLanguageBinding>(R.layout.fragment_language), OnLanguageItemClickListener {
+class FragmentLanguage : BaseFragment<FragmentLanguageBinding>(R.layout.fragment_language) {
 
-    private val adapterLanguage by lazy { AdapterLanguage(this) }
     private val dpLanguages by lazy { DpLanguages() }
     private var languageItem: LanguageItem? = null
+    private var adapterLanguage:AdapterLanguage? = null
+    private val langList =  dpLanguages.getLanguagesList(diComponent.sharedPreferenceUtils.selectedLanguageCode)
 
-    override fun onViewCreatedOneTime() {
-        initRecyclerView()
-        fillList()
+    override fun onViewCreatedOneTime() {}
 
-        binding.mbSubmitLanguage.setDebounceClickListener { onSubmitClick() }
+    override fun onViewCreatedEverytime() {
+        initLanguages()
+        binding.mbContinueLanguage.setOnClickListener { onContinueClick() }
     }
 
-    override fun onViewCreatedEverytime() {}
-
-    private fun initRecyclerView() {
-        binding.rvListLanguage.adapter = adapterLanguage
+    private fun initLanguages() = binding.actDropDownLanguage.apply {
+        adapterLanguage = AdapterLanguage(globalContext,langList)
+        val indexOf = langList.indexOfFirst{ it.languageCode == diComponent.sharedPreferenceUtils.selectedLanguageCode }
+        languageItem = langList[indexOf].also {
+            setText(it.languageName, false)
+        }
+        setAdapter(adapterLanguage)
+        setOnItemClickListener { parent, view, position, id ->
+            languageItem = langList[position].also {
+                setText(it.languageName, false)
+            }
+        }
     }
 
-    private fun fillList() {
-        val list = dpLanguages.getLanguagesList(diComponent.sharedPreferenceUtils.selectedLanguageCode)
-        adapterLanguage.submitList(list)
-    }
+    /**
+     * Add Service in Manifest first
+     */
 
-    override fun onItemClick(languageItem: LanguageItem) {
-        this.languageItem = languageItem
-        val newList = dpLanguages.getLanguagesList(languageItem.languageCode)
-        adapterLanguage.submitList(newList)
-    }
-
-    private fun onSubmitClick() {
+    private fun onContinueClick() {
         languageItem?.let {
             diComponent.sharedPreferenceUtils.selectedLanguageCode = it.languageCode
-            globalActivity.recreate()
+            (activity as MainActivity).onRecreate()
+        }?: kotlin.run {
+            popFrom(R.id.fragmentLanguage)
         }
-        popFrom(R.id.fragmentLanguage)
     }
 
     override fun navIconBackPressed() {

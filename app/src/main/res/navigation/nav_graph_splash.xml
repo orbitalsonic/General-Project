@@ -11,7 +11,7 @@
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash">
         <action
-            android:id="@+id/action_fragmentSplash_to_fragmentLanguage"
+            android:id="@+id/action_fragmentSplash_to_fragmentSplashLanguage"
             app:destination="@id/fragmentSplashLanguage"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -26,7 +26,7 @@
         android:label="fragment_start"
         tools:layout="@layout/fragment_splash_start">
         <action
-            android:id="@+id/action_fragmentStart_to_fragmentLanguage"
+            android:id="@+id/action_fragmentStart_to_fragmentSplashLanguage"
             app:destination="@id/fragmentSplashLanguage"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -38,6 +38,6 @@
     <fragment
         android:id="@+id/fragmentSplashLanguage"
         android:name="com.orbitalsonic.generalproject.ui.fragments.splash.FragmentSplashLanguage"
-        android:label="fragment_language"
+        android:label="@string/change_language"
         tools:layout="@layout/fragment_splash_language" />
 </navigation>

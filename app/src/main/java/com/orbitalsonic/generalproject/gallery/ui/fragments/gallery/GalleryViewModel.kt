@@ -26,7 +26,7 @@ class GalleryViewModel(application: Application) : AndroidViewModel(application)
     val picturesLiveData: LiveData<List<Picture>> get() = _picturesLiveData
 
     private val _picturesList = ArrayList<Picture>()
-    private val picturesList: List<Picture> get() = _picturesList
+    private val picturesList: List<Picture> get() = _picturesList.toList()
 
     private val _selectedPicturesList = ArrayList<Picture>()
     val selectedPicturesList: List<Picture> get() = _selectedPicturesList

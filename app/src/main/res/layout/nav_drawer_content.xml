@@ -5,9 +5,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
 
-<!--        app:imageAsset='@{"icon_header"}'-->
+        <!--        app:imageAsset='@{"icon_header"}'-->
 
         <ImageView
             android:id="@+id/iv_header_image"
@@ -19,7 +21,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:imageDrawable="@{@drawable/icon_header}"
+            tools:src="@drawable/ic_header_icon"
+            app:imageDrawable="@{@drawable/ic_header_icon}"
             />
 
         <TextView
@@ -66,31 +69,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/nav_privacy_policy"
+                    android:id="@+id/nav_change_languge"
                     style="@style/DrawerItemTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_drawer_item"
-                    android:text="@string/privacy_policy"
-                    app:drawableStartCompat="@drawable/ic_nav_privacy_30" />
+                    android:text="@string/change_language"
+                    app:drawableStartCompat="@drawable/ic_nav_change_language_30" />
 
-                <TextView
-                    android:id="@+id/nav_share_app"
-                    style="@style/DrawerItemTextStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_drawer_item"
-                    android:text="@string/share_app"
-                    app:drawableStartCompat="@drawable/ic_nav_share_30" />
-
-                <TextView
-                    android:id="@+id/nav_rate_us"
-                    style="@style/DrawerItemTextStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_drawer_item"
-                    android:text="@string/rate_us"
-                    app:drawableStartCompat="@drawable/ic_nav_rate_30" />
 
                 <TextView
                     android:id="@+id/nav_feedback"
@@ -101,6 +87,40 @@
                     android:fontFamily="@font/poppins"
                     android:text="@string/feedback"
                     app:drawableStartCompat="@drawable/ic_nav_feedback_30" />
+                <TextView
+                    android:id="@+id/nav_share_app"
+                    style="@style/DrawerItemTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_drawer_item"
+                    android:text="@string/share_app"
+                    app:drawableStartCompat="@drawable/ic_nav_share_30" />
+                <TextView
+                    android:id="@+id/nav_rate_us"
+                    style="@style/DrawerItemTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_drawer_item"
+                    android:text="@string/rate_us"
+                    app:drawableStartCompat="@drawable/ic_nav_rate_30" />
+
+                <TextView
+                    android:id="@+id/nav_privacy_policy"
+                    style="@style/DrawerItemTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_drawer_item"
+                    android:text="@string/privacy_policy"
+                    app:drawableStartCompat="@drawable/ic_nav_privacy_30" />
+
+                <TextView
+                    android:id="@+id/nav_remove_ads"
+                    style="@style/DrawerItemTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_drawer_item"
+                    android:text="@string/remove_ads"
+                    app:drawableStartCompat="@drawable/ic_nav_remove_ads_30" />
 
                 <TextView
                     android:id="@+id/nav_update_app"

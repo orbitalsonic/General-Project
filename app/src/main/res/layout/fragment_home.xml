@@ -9,50 +9,46 @@
         tools:context=".ui.fragments.home.FragmentHome">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/mb_click_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/room_database"
-            app:layout_constraintBottom_toTopOf="@+id/mb_sample_home"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mb_gallery_home" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/mb_gallery_home"
+            android:id="@+id/btn_gallery_screen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/gallery"
-            app:layout_constraintBottom_toTopOf="@+id/mb_click_home"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@+id/btn_room_db"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/mb_sample_home"
+            android:id="@+id/btn_room_db"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="@string/activity_result"
-            app:layout_constraintBottom_toTopOf="@+id/mb_language_home"
+            android:text="@string/room_database"
+            android:layout_marginVertical="@dimen/_30sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_result_screen"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mb_click_home" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_gallery_screen" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/mb_language_home"
+            android:id="@+id/btn_result_screen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/language_screen"
+            android:text="@string/activity_result"
+            app:layout_constraintBottom_toTopOf="@+id/btn_permission"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_room_db" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_permission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/permission_screen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mb_sample_home" />
-
+            android:layout_marginTop="@dimen/_30sdp"
+            app:layout_constraintTop_toBottomOf="@+id/btn_result_screen" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

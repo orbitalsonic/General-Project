@@ -27,6 +27,7 @@
             android:text="@string/empty_list"
             android:textAlignment="center"
             android:visibility="gone"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/rv_room_list_enlist_country"

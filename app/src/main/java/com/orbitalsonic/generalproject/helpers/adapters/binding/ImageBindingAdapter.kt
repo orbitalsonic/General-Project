@@ -2,10 +2,13 @@ package com.orbitalsonic.generalproject.helpers.adapters.binding
 
 import android.graphics.drawable.Drawable
 import android.net.Uri
+import android.util.Log
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.orbitalsonic.generalproject.helpers.firebase.FirebaseUtils.recordException
 import java.io.File
 
 /**
@@ -58,10 +61,17 @@ fun ImageView.setImageFromUri(imageUri: Uri?) {
 
 @BindingAdapter("imageFilePath")
 fun ImageView.setImageFromFilePath(imageFilePath: File) {
-    Glide
-        .with(this)
-        .load(imageFilePath.toString())
-        .into(this)
+    try {
+        if (imageFilePath.exists()) {
+            Glide
+                .with(this)
+                .load(imageFilePath.toString())
+                .into(this)
+        }
+    } catch (ex: SecurityException) {
+        Log.e("TAG_ERROR", "setImageFromFilePath: ", ex)
+        ex.recordException("setImageFromFilePath")
+    }
 }
 
 /**
@@ -92,4 +102,21 @@ fun ImageView.setImageFromAssets(imageAsset: String) {
         .with(this)
         .load(Uri.parse("file:///android_asset/flags/$imageAsset.webp"))
         .into(this)
+}
+
+/**
+ * @param: tintImg -> Set attribute tint color for this
+ *  Syntax:
+ *      xml     ->    app:tintImg="@{item.isSelected}"
+ */
+@BindingAdapter("tintImg")
+fun ImageView.setImageTint(isSelected:Boolean) {
+//    if (isSelected){
+//        val typedArray = context.theme.obtainStyledAttributes(intArrayOf(R.attr.colorFromAttribute))
+//        val textColor = typedArray.getColor(0, 0)
+//        typedArray.recycle()
+//        setColorFilter(textColor)
+//    }else{
+//        setColorFilter(ContextCompat.getColor(context, R.color.normalColor))
+//    }
 }
