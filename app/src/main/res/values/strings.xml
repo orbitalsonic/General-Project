@@ -2,11 +2,13 @@
     <string name="app_name">General Project</string>
 
     <!-- nav_drawer_content -->
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="share_app">Share App</string>
-    <string name="rate_us">Rate Us</string>
-    <string name="feedback">Feedback</string>
-    <string name="update_app">Update App</string>
-    <string name="change_language">Change Language</string>
+    <string name="report_bugs_issues"><![CDATA[Report bugs & issues]]></string>
+    <string name="rate_on_play_store">Rate on Play Store</string>
+    <string name="privacy_policy"><![CDATA[Privacy & Policy]]></string>
+    <string name="terms_condition"><![CDATA[Terms & Condition]]></string>
+    <string name="support">Support</string>
+    <string name="share_app_with_friends">Share app with friends</string>
+    <string name="about_us">About Us</string>
+    <string name="app_version">App Version</string>
 
 </resources>

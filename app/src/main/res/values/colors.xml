@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00ee7c</color>
-    <color name="colorPrimaryVariant">#02AB5A</color>
-    <color name="colorSecondary">#06AD5D</color>
-    <color name="colorSecondaryVariant">#008747</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="darkGray">#B7B7B7</color>
-    <color name="darkerGray">#807F7F</color>
-    <color name="lightGray">#F2F2F2</color>
+    <!--    Primary Colors-->
+    <color name="primary50">#E6EFEF</color>
+    <color name="primary100">#B0CDCE</color>
+    <color name="primary200">#8AB5B6</color>
+    <color name="primary300">#549494</color>
+    <color name="primary400">#337F80</color>
+    <color name="primary500">#005F60</color>
+    <color name="primary600">#005657</color>
+    <color name="primary700">#004344</color>
+    <color name="primary800">#003435</color>
+    <color name="primary900">#002828</color>
+
+    <!--    Secondary Colors-->
+    <color name="secondary50">#FFF7EB</color>
+    <color name="secondary100">#FDE5C1</color>
+    <color name="secondary200">#FDD8A3</color>
+    <color name="secondary300">#FCC778</color>
+    <color name="secondary400">#FBBC5E</color>
+    <color name="secondary500">#FAAB36</color>
+    <color name="secondary600">#E49C31</color>
+    <color name="secondary700">#B27926</color>
+    <color name="secondary800">#8A5E1E</color>
+    <color name="secondary900">#694817</color>
+
+    <!--    Accent Colors-->
+    <color name="neutral50">#EAEAEA</color>
+    <color name="neutral100">#BEBEBE</color>
+    <color name="neutral200">#9E9E9E</color>
+    <color name="neutral300">#727272</color>
+    <color name="neutral400">#565656</color>
+    <color name="neutral500">#2C2C2C</color>
+    <color name="neutral600">#282828</color>
+    <color name="neutral700">#1F1F1F</color>
+    <color name="neutral800">#181818</color>
+    <color name="neutral900">#121212</color>
 </resources>
