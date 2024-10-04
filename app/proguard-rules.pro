@@ -20,9 +20,5 @@
 # hide the original source file name.
 -renamesourcefileattribute SourceFile
 
--keep public class com.orbitalsonic.generalproject.helpers.datamodel.**
--keep public class com.orbitalsonic.generalproject.roomdb.tables.**
--keep public class com.orbitalsonic.generalproject.gallery.helper.models.**
-
 -keepnames class * extends android.os.Parcelable
 -keepnames class * extends java.io.Serializable

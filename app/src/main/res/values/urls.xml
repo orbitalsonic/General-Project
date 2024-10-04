@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_link" translatable="false">https://orbitalsonic.com/</string>
+    <string name="privacy_link" translatable="false">https://orbitalsonic.com/privacy-policy</string>
+    <string name="terms_condition_link" translatable="false">https://orbitalsonic.com//terms-and-conditions</string>
+    <string name="help_email" translatable="false">help@orbitalsonic.com</string>
+    <string name="support_email" translatable="false">support@orbitalsonic.com</string>
+</resources>

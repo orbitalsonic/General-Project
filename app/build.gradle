@@ -3,33 +3,21 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
-    id 'com.google.gms.google-services'
-    id 'com.google.firebase.crashlytics'
     id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
     namespace 'com.orbitalsonic.generalproject'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.orbitalsonic.generalproject"
         minSdk 23
-        targetSdk 33
-        versionCode 129
-        versionName "3.5.7"
+        targetSdk 34
+        versionCode 427
+        versionName "4.3.27"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    bundle {
-        language {
-            // Specifies that the app bundle should not support
-            // configuration APKs for language resources. These
-            // resources are instead packaged with each base and
-            // dynamic feature APK.
-            enableSplit = false
-        }
     }
 
     buildTypes {
@@ -46,70 +34,27 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
     buildFeatures {
         dataBinding true
         viewBinding true
+        buildConfig true
     }
 }
 
 dependencies {
-
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
-    // MenuHostProvider
-    implementation "androidx.activity:activity-ktx:1.7.1"
-
-    // GSON (JSON to Object & vice versa)
-    implementation 'com.google.code.gson:gson:2.10'
-
-    // SDP layout size && SSP Text sizes
-    implementation 'com.intuit.sdp:sdp-android:1.1.0'
-    implementation 'com.intuit.ssp:ssp-android:1.1.0'
 
     // navigation components
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
-
-    // Room components
-    implementation "androidx.room:room-runtime:2.5.1"
-    implementation "androidx.room:room-ktx:2.5.1"
-    kapt "androidx.room:room-compiler:2.5.1"
-    androidTestImplementation "androidx.room:room-testing:2.5.1"
-
-    // firebase configuration
-    implementation platform('com.google.firebase:firebase-bom:31.2.0')
-    // Firebase Remote Config (Kotlin)
-    implementation 'com.google.firebase:firebase-config-ktx'
-    // Firebase Analytics (Kotlin)
-    implementation 'com.google.firebase:firebase-analytics-ktx'
-    // Firebase Crashlytics (Kotlin)
-    implementation 'com.google.firebase:firebase-crashlytics-ktx'
-
-    // View Model
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
-
-    // Koin for dependency injection
-    implementation "io.insert-koin:koin-android:3.3.2"
-
-    // Glide Library for imageview
-    implementation 'com.github.bumptech.glide:glide:4.14.2'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
-
-    // update latest work library
-    implementation 'androidx.work:work-runtime-ktx:2.8.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.8.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.8.2'
 
 }
