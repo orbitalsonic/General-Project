@@ -3,6 +3,7 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="surfaceColor">#FFFFFF</color>
 
     <!--    Primary Colors-->
     <color name="primary50">#E6EFEF</color>

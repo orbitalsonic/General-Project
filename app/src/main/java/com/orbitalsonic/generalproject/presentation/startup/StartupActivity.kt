@@ -64,9 +64,4 @@ class StartupActivity : BaseActivity<ActivityStartupBinding>(ActivityStartupBind
         statusBarColorUpdate(statusBarColor)
     }
 
-    fun moveActivity() {
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
-    }
-
 }
