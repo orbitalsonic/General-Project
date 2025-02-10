@@ -5,44 +5,47 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import com.orbitalsonic.generalproject.R
+import com.orbitalsonic.generalproject.databinding.DialogPermissionBinding
+import com.orbitalsonic.generalproject.helpers.ui.getScreenHeight
+import com.orbitalsonic.generalproject.helpers.ui.getScreenWidth
+import com.orbitalsonic.generalproject.presentation.dialogs.callbacks.OnDialogClickListener
 
-fun Activity?.showPrayerAngleDialog(
-    title:String,
-    items: List<Double>,
-    defaultSelection: Double?,
-    onItemSelected: (Double) -> Unit
+fun Activity?.showCountryDialog(
+    onItemSelected: (String) -> Unit
 ) {
     this?.let { context ->
-        // Format the items for the dialog
-        val formattedItems = items.map { "$it°" }.toTypedArray()
-
-        // Determine the default selected index
-        val defaultIndex = defaultSelection?.let {
-            items.indexOf(it).takeIf { index -> index != -1 } // Only use if item exists
-        } ?: 0
-
+        val nuclearCountries = arrayOf(
+            "Russia",
+            "United States",
+            "China",
+            "France",
+            "United Kingdom",
+            "Pakistan",
+            "India",
+            "Israel",
+            "North Korea"
+        )
         // Show the dialog
-        AlertDialog.Builder(context, R.style.SingleChoiceAlertDialogTheme)
-            .setTitle(title)
-            .setSingleChoiceItems(formattedItems, defaultIndex) { dialog, which ->
+        AlertDialog.Builder(context)
+            .setTitle("Select a Nuclear Country") // Set your title
+            .setSingleChoiceItems(nuclearCountries, 0) { dialog, which ->
                 // Item selected, pass back the value
-                onItemSelected(items[which])
+                onItemSelected(nuclearCountries[which])
                 dialog.dismiss()
             }
-            .setNegativeButton(context.getResString(R.string.cancel)) { dialog, _ ->
+            .setNegativeButton("Cancel") { dialog, _ ->
                 dialog.dismiss()
             }
             .show()
     }
 }
 
-fun Activity?.privacyDialog(
-    listener: OnPrivacyDialogClickListener
+fun Activity?.permissionDialog(
+    listener: OnDialogClickListener
 ) {
     this?.let { mActivity ->
         val mDialog = Dialog(mActivity)
-        val dialogBinding = DialogPrivacyConsentBinding.inflate(mActivity.layoutInflater)
+        val dialogBinding = DialogPermissionBinding.inflate(mActivity.layoutInflater)
         mDialog.setContentView(dialogBinding.root)
         mDialog.setCanceledOnTouchOutside(false)
         mDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -52,22 +55,14 @@ fun Activity?.privacyDialog(
             (mActivity.getScreenWidth() * .85).toInt()
         dialogBinding.dialogLayout.layoutParams.height = (mActivity.getScreenHeight() * .65).toInt()
 
-        dialogBinding.btnBack.setOnRapidClickSafeListener {
-            listener.onCancelClick()
+        dialogBinding.btnCancel.setOnClickListener {
+            listener.onCancel()
             mDialog.dismiss()
         }
 
-        dialogBinding.btnContinue.setOnRapidClickSafeListener {
-            listener.onDoneClick()
+        dialogBinding.btnDone.setOnClickListener {
+            listener.onProceed()
             mDialog.dismiss()
-        }
-
-        dialogBinding.btnPrivacyPolicy.setOnRapidClickSafeListener {
-            mActivity.privacyPolicy()
-        }
-
-        dialogBinding.mcbAccept.setOnCheckedChangeListener { _, isChecked ->
-            dialogBinding.btnContinue.isEnabled = isChecked
         }
 
         mDialog.show()

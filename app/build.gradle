@@ -47,7 +47,6 @@ android {
     }
     buildFeatures {
         viewBinding true
-        dataBinding true
         buildConfig true
     }
 }
@@ -79,7 +78,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-process:2.8.7'
 
     // Firebase configuration with BoM
-    implementation platform('com.google.firebase:firebase-bom:33.9.0')
+    implementation platform('com.google.firebase:firebase-bom:33.7.0')
     implementation 'com.google.firebase:firebase-config'
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-crashlytics'

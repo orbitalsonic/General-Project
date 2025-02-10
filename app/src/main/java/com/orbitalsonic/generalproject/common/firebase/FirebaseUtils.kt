@@ -8,51 +8,56 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.installations.FirebaseInstallations
 import com.google.firebase.ktx.Firebase
 
-/**
- *  Syntax:
- *      try {}
- *      catch(ex: Exception){
- *          ex.recordException("MainActivity > OnCreate > getList")
- *      }
- */
+object FirebaseUtils {
 
-fun Throwable.recordException(log: String) {
-    try {
-        FirebaseCrashlytics.getInstance().log(log)
-        FirebaseCrashlytics.getInstance().recordException(this)
-        Log.e("firebase_tag", "recordException: ${this.message.toString()}")
-    } catch (e: Exception) {
-        Log.e("firebase_tag", "recordException: ${this.message.toString()}")
-    }
-}
+    private const val TAG_FIREBASE = "TAG_FIREBASE"
 
-/**
- *  Syntax:
- *      EventsProvider.HOME_SCREEN.postFirebaseEvent()
- *      EventsProvider.START_BUTTON.postFirebaseEvent()
- */
+    /**
+     *  Syntax:
+     *      try {}
+     *      catch(ex: Exception){
+     *          ex.recordException("MainActivity > OnCreate > getList")
+     *      }
+     */
 
-fun String.postFirebaseEvent() {
-    try {
-        val firebaseAnalytics: FirebaseAnalytics = Firebase.analytics
-        val bundle = Bundle().also {
-            it.putString(this, this)
+    fun Throwable.recordException(logTag: String) {
+        try {
+            FirebaseCrashlytics.getInstance().log(logTag)
+            FirebaseCrashlytics.getInstance().recordException(this)
+            Log.e(logTag, "recordException: ${this.message.toString()}")
+        } catch (e: Exception) {
+            Log.e(logTag, "recordException: ${this.message.toString()}")
         }
-        firebaseAnalytics.logEvent(this, bundle)
-        Log.d("firebase_tag", "postFirebaseEvent:$this successfully sent")
-    } catch (ex: Exception) {
-        ex.recordException("post_event_crash > $this")
     }
-}
 
-fun getDeviceToken() {
-    // Add this 'id' in firebase AB testing console as a testing device
-    FirebaseInstallations.getInstance().getToken(false)
-        .addOnCompleteListener { task ->
-            if (task.isSuccessful && task.result != null) {
-                Log.d("firebase_tag", "Installation auth token: " + task.result.token)
-            } else {
-                Log.e("firebase_tag", "Unable to get Installation auth token")
+    /**
+     *  Syntax:
+     *      EventsProvider.HOME_SCREEN.postFirebaseEvent()
+     *      EventsProvider.START_BUTTON.postFirebaseEvent()
+     */
+
+    fun String.postFirebaseEvent() {
+        try {
+            val firebaseAnalytics: FirebaseAnalytics = Firebase.analytics
+            val bundle = Bundle().also {
+                it.putString(this, this)
             }
+            firebaseAnalytics.logEvent(this, bundle)
+            Log.d(TAG_FIREBASE, "postFirebaseEvent:$this successfully sent")
+        } catch (ex: Exception) {
+            ex.recordException("post_event_crash > $this")
         }
+    }
+
+    fun getDeviceToken() {
+        // Add this 'id' in firebase AB testing console as a testing device
+        FirebaseInstallations.getInstance().getToken(false)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful && task.result != null) {
+                    Log.d(TAG_FIREBASE, "Installation auth token: " + task.result.token)
+                } else {
+                    Log.e(TAG_FIREBASE, "Unable to get Installation auth token")
+                }
+            }
+    }
 }
