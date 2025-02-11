@@ -9,6 +9,8 @@ Each topic includes explanations, sample code, and real-world use cases to ensur
 ---
 
 ## 📖 Topics Covered
+
+### 🔹 Basic Topics
 1. **Default Splash** – Implementing a smooth and optimized splash screen.
 2. **Bottom Navigation** – Implementing a modern bottom navigation bar.
 3. **TabLayout** – Managing multiple fragments with a TabLayout and ViewPager2.
@@ -19,6 +21,14 @@ Each topic includes explanations, sample code, and real-world use cases to ensur
 8. **Setting Screen** – Creating a structured settings/preferences screen.
 9. **Dialogs** – Implementing custom and system dialogs in Android.
 10. **Double Click Prevention** – Avoiding accidental multiple clicks on buttons.
+11. **OnBackPress in Activity & Fragment** – Handling back navigation effectively.
+12. **Firebase (Analytics, Crashlytics, RemoteConfig)** – Integrating Firebase services for better app insights and stability.
+
+### 🚀 Advanced Topics
+13. **Jetpack Navigation** – Implementing navigation architecture using Jetpack components.
+14. **ViewModel** – Managing UI-related data efficiently with ViewModel.
+15. **Coroutines** – Handling asynchronous programming with Kotlin Coroutines.
+16. **DiffUtils** – Optimizing RecyclerView performance with DiffUtils.
 
 ---
 
