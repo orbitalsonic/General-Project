@@ -22,14 +22,14 @@ Each topic includes explanations, sample code, and real-world use cases to ensur
 9. **Dialogs** – Implementing custom and system dialogs in Android.
 10. **Double Click Prevention** – Avoiding accidental multiple clicks on buttons.
 11. **OnBackPress in Activity & Fragment** – Handling back navigation effectively.
-12. **Firebase (Analytics, Crashlytics, RemoteConfig)** – Integrating Firebase services for better app insights and stability.
+12. **Firebase (Analytics, Crashlytics, RemoteConfig)** – Integrating Firebase services.
 
 ### 🚀 Advanced Topics
 13. **Jetpack Navigation** – Implementing navigation architecture using Jetpack components.
 14. **ViewModel** – Managing UI-related data efficiently with ViewModel.
 15. **Coroutines** – Handling asynchronous programming with Kotlin Coroutines.
 16. **DiffUtils** – Optimizing RecyclerView performance with DiffUtils.
-17. **MVVM Architecture** – Implementing the Model-View-ViewModel (MVVM) architecture for clean and scalable apps.
+17. **MVVM Architecture** – Implementing the MVVM architecture for clean and scalable apps.
 
 ---
 
