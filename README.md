@@ -29,6 +29,7 @@ Each topic includes explanations, sample code, and real-world use cases to ensur
 14. **ViewModel** – Managing UI-related data efficiently with ViewModel.
 15. **Coroutines** – Handling asynchronous programming with Kotlin Coroutines.
 16. **DiffUtils** – Optimizing RecyclerView performance with DiffUtils.
+17. **MVVM Architecture** – Implementing the Model-View-ViewModel (MVVM) architecture for clean and scalable apps.
 
 ---
 
