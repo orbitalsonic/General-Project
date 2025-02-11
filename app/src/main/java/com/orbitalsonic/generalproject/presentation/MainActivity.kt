@@ -2,22 +2,36 @@ package com.orbitalsonic.generalproject.presentation
 
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.ActivityMainBinding
+import com.orbitalsonic.generalproject.helpers.ui.statusBarColorUpdate
 import com.orbitalsonic.generalproject.presentation.base.activities.BaseActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
     private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreated() {
+        statusBarColorUpdate(R.color.primary600)
+        initToolbar()
         initNavController()
         initNavListener()
     }
 
+    private fun initToolbar() {
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(true)
+    }
+
     private fun initNavController() {
-        navController =
-            (supportFragmentManager.findFragmentById(binding.navHostFragmentContainer.id) as NavHostFragment).navController
+        navController = (supportFragmentManager.findFragmentById(binding.navHostFragmentContainer.id) as NavHostFragment).navController
+        appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.fragmentHome)
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     private fun initNavListener() {
@@ -28,6 +42,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                 else -> {}
             }
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
 }
