@@ -10,13 +10,32 @@
         android:name="com.orbitalsonic.generalproject.presentation.home.FragmentHome"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home">
-      <!--  <action
-            android:id="@+id/action_fragmentHome_to_fragmentEnlistCountry"
-            app:destination="@id/fragmentEnlistCountry"
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentSettings"
+            app:destination="@id/fragmentSettings"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />-->
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentDialogSample"
+            app:destination="@id/fragmentDialogSample"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentSettings"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.settings.FragmentSettings"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings"
+        />
+    <fragment
+        android:id="@+id/fragmentDialogSample"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.dialogsample.FragmentDialogSample"
+        android:label="Dialogs Sample"
+        tools:layout="@layout/fragment_dialog_sample"
+        />
 
 </navigation>

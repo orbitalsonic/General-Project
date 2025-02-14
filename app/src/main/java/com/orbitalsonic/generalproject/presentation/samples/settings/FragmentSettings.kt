@@ -13,7 +13,12 @@ import com.orbitalsonic.generalproject.presentation.base.fragments.BaseFragment
 class FragmentSettings : BaseFragment<FragmentSettingsBinding>(FragmentSettingsBinding::inflate) {
 
     override fun onViewCreated() {
+        initValues()
         setupClicks()
+    }
+
+    private fun initValues() {
+        binding.mtvVersion.text = BuildConfig.VERSION_NAME
     }
 
     private fun setupClicks() {
