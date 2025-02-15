@@ -111,6 +111,8 @@ fun Activity?.support() {
             it.startActivity(emailIntent)
         } catch (ex: ActivityNotFoundException) {
             ex.printStackTrace()
+        } catch (ex:SecurityException){
+            ex.printStackTrace()
         }
     }
 }
@@ -127,6 +129,8 @@ fun Activity?.bugReport(text:String) {
         try {
             it.startActivity(emailIntent)
         } catch (ex: ActivityNotFoundException) {
+            ex.printStackTrace()
+        }catch (ex:SecurityException){
             ex.printStackTrace()
         }
     }
