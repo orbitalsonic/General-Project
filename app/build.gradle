@@ -4,6 +4,8 @@ plugins {
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
     id 'com.google.devtools.ksp'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -96,63 +98,6 @@ dependencies {
 
     // Splash Screen API
     implementation 'androidx.core:core-splashscreen:1.0.1'
-
-    dependencies {
-        // Google Play Services Location
-        implementation 'com.google.android.gms:play-services-location:21.3.0'
-
-        // Splash Screen API
-        implementation 'androidx.core:core-splashscreen:1.0.1'
-
-        // Koin Dependency Injection Library
-        implementation 'io.insert-koin:koin-android:3.4.0'
-
-        // Image loading and caching library
-        implementation 'com.github.bumptech.glide:glide:4.15.1'
-        ksp 'com.github.bumptech.glide:ksp:4.14.2'
-
-        // Firebase configuration with BoM
-        implementation platform('com.google.firebase:firebase-bom:33.1.1')
-        // Firebase Remote Config
-        implementation 'com.google.firebase:firebase-config'
-        // Firebase Analytics
-        implementation 'com.google.firebase:firebase-analytics'
-        // Firebase Crashlytics
-        implementation 'com.google.firebase:firebase-crashlytics'
-        // Firebase Auth
-        implementation 'com.google.firebase:firebase-auth'
-        // Firebase AppCheck
-        implementation 'com.google.firebase:firebase-appcheck-playintegrity'
-        // Google Play Integrity API
-        implementation 'com.google.android.play:integrity:1.4.0'
-        // Firebase Cloud Messaging FCM
-        implementation 'com.google.firebase:firebase-messaging-ktx:24.1.0'
-
-        implementation 'androidx.core:core-ktx:1.13.1'
-        implementation 'androidx.appcompat:appcompat:1.7.0'
-        implementation 'com.google.android.material:material:1.12.0'
-        implementation 'androidx.activity:activity:1.9.3'
-        implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-
-        // JSON (de)serialization library
-        implementation 'com.google.code.gson:gson:2.10.1'
-
-        // Responsive layout sizes
-        implementation 'com.intuit.sdp:sdp-android:1.1.0'
-        implementation 'com.intuit.ssp:ssp-android:1.1.0'
-
-        // Navigation components
-        implementation 'androidx.navigation:navigation-fragment-ktx:2.7.7'
-        implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'
-
-        // ViewModel and LiveData
-        implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.2'
-        implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.2'
-        implementation 'androidx.lifecycle:lifecycle-process:2.8.7'
-
-        // Lottie Animation Library
-        implementation 'com.airbnb.android:lottie:6.5.0'
-    }
 
 
 }
