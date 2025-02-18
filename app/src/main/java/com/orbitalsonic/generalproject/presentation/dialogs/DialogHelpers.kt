@@ -53,7 +53,7 @@ fun Activity?.permissionDialog(
         dialogBinding.dialogLayout.requestLayout()
         dialogBinding.dialogLayout.layoutParams.width =
             (mActivity.getScreenWidth() * .85).toInt()
-        dialogBinding.dialogLayout.layoutParams.height = (mActivity.getScreenHeight() * .65).toInt()
+        dialogBinding.dialogLayout.layoutParams.height = (mActivity.getScreenHeight() * .45).toInt()
 
         dialogBinding.btnCancel.setOnClickListener {
             listener.onCancel()

@@ -27,7 +27,10 @@ class FragmentHome : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 val action = FragmentHomeDirections.actionFragmentHomeToFragmentDialogSample()
                 navigateTo(R.id.fragmentHome,action)
             }
-            btnDoubleClicks.setOnClickListener {  }
+            btnDoubleClicks.setOnClickListener {
+                val action = FragmentHomeDirections.actionFragmentHomeToFragmentClickSample()
+                navigateTo(R.id.fragmentHome,action)
+            }
 
         }
     }

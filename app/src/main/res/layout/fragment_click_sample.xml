@@ -11,22 +11,14 @@
         android:orientation="vertical"
         android:layout_gravity="center"
         >
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_custom_dialog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="Custom Dialog"
-            />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_single_choice"
+            android:id="@+id/btn_double_click"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="Single Choice Dialog"
+            android:text="Fast Double Click Prevent"
             />
 
     </LinearLayout>

@@ -19,6 +19,12 @@ class FragmentDialogSample :
     private fun setupClicks() {
         binding.apply {
             btnSingleChoice.setOnClickListener {
+                activity.showCountryDialog {
+                    activity.showToast(it)
+                }
+            }
+
+            btnCustomDialog.setOnClickListener {
                 activity.permissionDialog(object :OnDialogClickListener{
                     override fun onProceed() {
                         activity.showToast("Permission Granted")
@@ -28,12 +34,6 @@ class FragmentDialogSample :
                         activity.showToast("Permission Denied")
                     }
                 })
-            }
-
-            btnCustomDialog.setOnClickListener {
-                activity.showCountryDialog {
-                    activity.showToast(it)
-                }
             }
         }
     }
