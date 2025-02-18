@@ -5,7 +5,7 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import com.orbitalsonic.generalproject.databinding.DialogPermissionBinding
+import com.orbitalsonic.generalproject.databinding.DialogMyCustomBinding
 import com.orbitalsonic.generalproject.helpers.ui.getScreenHeight
 import com.orbitalsonic.generalproject.helpers.ui.getScreenWidth
 import com.orbitalsonic.generalproject.presentation.dialogs.callbacks.OnDialogClickListener
@@ -40,12 +40,12 @@ fun Activity?.showCountryDialog(
     }
 }
 
-fun Activity?.permissionDialog(
+fun Activity?.myCustomDialog(
     listener: OnDialogClickListener
 ) {
     this?.let { mActivity ->
         val mDialog = Dialog(mActivity)
-        val dialogBinding = DialogPermissionBinding.inflate(mActivity.layoutInflater)
+        val dialogBinding = DialogMyCustomBinding.inflate(mActivity.layoutInflater)
         mDialog.setContentView(dialogBinding.root)
         mDialog.setCanceledOnTouchOutside(false)
         mDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -66,5 +66,25 @@ fun Activity?.permissionDialog(
         }
 
         mDialog.show()
+    }
+}
+
+fun Activity?.showPermissionDialog(
+    onGranted: () -> Unit,
+    onDenied: () -> Unit
+) {
+    this?.let { context ->
+        AlertDialog.Builder(context)
+            .setTitle("Permission Required")
+            .setMessage("This app needs access to your location to provide complete access to the feature. Please grant the necessary permission to continue.")
+            .setPositiveButton("Grant") { dialog, _ ->
+                onGranted()
+                dialog.dismiss()
+            }
+            .setNegativeButton("Deny") { dialog, _ ->
+                onDenied()
+                dialog.dismiss()
+            }
+            .show()
     }
 }

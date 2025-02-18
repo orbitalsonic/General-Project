@@ -1,11 +1,10 @@
 package com.orbitalsonic.generalproject.presentation.samples.dialogsample
 
 import com.orbitalsonic.generalproject.databinding.FragmentDialogSampleBinding
-import com.orbitalsonic.generalproject.helpers.settings.rateUs
 import com.orbitalsonic.generalproject.helpers.ui.showToast
 import com.orbitalsonic.generalproject.presentation.base.fragments.BaseFragment
 import com.orbitalsonic.generalproject.presentation.dialogs.callbacks.OnDialogClickListener
-import com.orbitalsonic.generalproject.presentation.dialogs.permissionDialog
+import com.orbitalsonic.generalproject.presentation.dialogs.myCustomDialog
 import com.orbitalsonic.generalproject.presentation.dialogs.showCountryDialog
 
 class FragmentDialogSample :
@@ -25,7 +24,7 @@ class FragmentDialogSample :
             }
 
             btnCustomDialog.setOnClickListener {
-                activity.permissionDialog(object :OnDialogClickListener{
+                activity.myCustomDialog(object :OnDialogClickListener{
                     override fun onProceed() {
                         activity.showToast("Permission Granted")
                     }
