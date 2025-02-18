@@ -31,6 +31,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentResultSample"
+            app:destination="@id/fragmentResultSample"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/fragmentSettings"
@@ -49,5 +56,10 @@
         android:name="com.orbitalsonic.generalproject.presentation.samples.doubleclicks.FragmentClickSample"
         android:label="Double Click Sample"
         tools:layout="@layout/fragment_click_sample"/>
+    <fragment
+        android:id="@+id/fragmentResultSample"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.results.FragmentResultSample"
+        android:label="Result Sample"
+        tools:layout="@layout/fragment_result_sample"/>
 
 </navigation>

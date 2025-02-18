@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:titleTextColor="@android:color/white"
+        app:title="Sample Result"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mtv_wild_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Eagle: A powerful bird that flies high and fast, often living in mountains."
+        android:paddingHorizontal="20dp"
+        android:gravity="center"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/neutral500"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/btn_set_result"
+        />
+
+    <Button
+        android:id="@+id/btn_set_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Result"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

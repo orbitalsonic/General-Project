@@ -1,5 +1,7 @@
 package com.orbitalsonic.generalproject.presentation
 
+import android.content.Intent
+import android.os.Build
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -46,6 +48,22 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    fun moveActivity(mIntent: Intent) {
+
+        startActivity(mIntent)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            overrideActivityTransition(
+                OVERRIDE_TRANSITION_OPEN,
+                R.anim.slide_enter,
+                R.anim.slide_exit
+            )
+        } else {
+            overridePendingTransition(R.anim.slide_enter, R.anim.slide_exit)
+        }
+
     }
 
 }

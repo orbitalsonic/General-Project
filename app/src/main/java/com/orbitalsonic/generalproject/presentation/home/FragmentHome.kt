@@ -18,7 +18,10 @@ class FragmentHome : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             btnLanguage.setOnClickListener {  }
             btnLocation.setOnClickListener {  }
             btnPermission.setOnClickListener {  }
-            btnResult.setOnClickListener {  }
+            btnResult.setOnClickListener {
+                val action = FragmentHomeDirections.actionFragmentHomeToFragmentResultSample()
+                navigateTo(R.id.fragmentHome,action)
+            }
             btnSettings.setOnClickListener {
                 val action = FragmentHomeDirections.actionFragmentHomeToFragmentSettings()
                 navigateTo(R.id.fragmentHome,action)

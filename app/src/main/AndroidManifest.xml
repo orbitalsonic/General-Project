@@ -31,6 +31,10 @@
             android:name=".presentation.MainActivity"
             android:exported="false"
             />
+        <activity
+            android:name=".presentation.samples.results.ResultSampleActivity"
+            android:exported="false"
+            />
     </application>
 
 </manifest>
