@@ -45,6 +45,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentLocationSample"
+            app:destination="@id/fragmentLocationSample"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/fragmentSettings"
@@ -74,5 +81,10 @@
         android:label="Permission Sample"
         tools:layout="@layout/fragment_permission_sample"
         />
+    <fragment
+        android:id="@+id/fragmentLocationSample"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.location.FragmentLocationSample"
+        android:label="Location Sample"
+        tools:layout="@layout/fragment_location_sample"/>
 
 </navigation>

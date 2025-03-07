@@ -16,7 +16,10 @@ class FragmentHome : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             btnBottomNav.setOnClickListener {  }
             btnTabLayout.setOnClickListener {  }
             btnLanguage.setOnClickListener {  }
-            btnLocation.setOnClickListener {  }
+            btnLocation.setOnClickListener {
+                val action = FragmentHomeDirections.actionFragmentHomeToFragmentLocationSample()
+                navigateTo(R.id.fragmentHome,action)
+            }
             btnPermission.setOnClickListener {
                 val action = FragmentHomeDirections.actionFragmentHomeToFragmentPermissionSample()
                 navigateTo(R.id.fragmentHome,action)
