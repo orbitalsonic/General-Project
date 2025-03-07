@@ -1,9 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:background="@color/surfaceColor">
 
+    <EditText
+        android:id="@+id/et_search_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_input"
+        android:focusableInTouchMode="true"
+        android:gravity="center|start"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/neutral500"
+        android:textCursorDrawable="@drawable/bg_et_cursor"
+        android:textColorHint="@color/neutral300"
+        android:hint="Search Language"
+        android:lines="1"
+        android:maxLength="15"
+        android:inputType="text"
+        android:importantForAutofill="no"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:drawablePadding="@dimen/_10sdp"
+        android:drawableStart="@drawable/ic_search"
+        app:layout_constraintWidth_percent="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/language_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_language"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_search_text"
+        app:layout_constraintBottom_toTopOf="@+id/mtv_translated_text"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_nothing_found"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nothing Found"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/neutral200"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:drawablePadding="@dimen/_5sdp"
+        android:drawableTop="@drawable/ic_empty_search"
+        tools:visibility="gone"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mtv_translated_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/neutral500"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/translated_sample_text"
+        android:background="#FBF9F9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

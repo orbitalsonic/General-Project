@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">General Project</string>
+    <string name="app_name" translatable="false">General Project</string>
 
     <!--    Settings-->
     <string name="settings">Settings</string>
@@ -10,5 +10,7 @@
     <string name="report_bugs_issues"><![CDATA[Report bugs & issues]]></string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="app_version">App Version</string>
+
+    <string name="translated_sample_text">As a sample app language, this text will only be translated. If you want to translate all the text in the app, you need to add it to the all string file. However, for the purpose of understanding how to apply language settings, this text is sufficient.</string>
 
 </resources>

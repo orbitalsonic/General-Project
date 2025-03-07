@@ -1,0 +1,3 @@
+<resources>
+    <string name="translated_sample_text">As a sample app language, this text will only be translated. If you want to translate all the text in the app, you need to add it to the all string file. However, for the purpose of understanding how to apply language settings, this text is sufficient.</string>
+</resources>
