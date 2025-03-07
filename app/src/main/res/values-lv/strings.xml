@@ -1,3 +1,3 @@
 <resources>
-    
+    <string name="translated_sample_text">Kā lietotņu valodas paraugs šis teksts tiks tulkots tikai. Ja vēlaties tulkot visu lietotnē esošo tekstu, tas jāpievieno visu virkņu failam. Tomēr, lai saprastu, kā lietot valodas iestatījumus, pietiek ar šo tekstu.</string>
 </resources>

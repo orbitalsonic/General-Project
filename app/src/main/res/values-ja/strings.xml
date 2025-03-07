@@ -1,3 +1,3 @@
 <resources>
-    
+    <string name="translated_sample_text">サンプルアプリ言語として、このテキストは翻訳のみされます。アプリ内のすべてのテキストを翻訳したい場合は、それを all string ファイルに追加する必要があります。ただし、言語設定の適用方法を理解するには、このテキストで十分です。</string>
 </resources>

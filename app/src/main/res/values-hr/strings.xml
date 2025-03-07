@@ -1,3 +1,3 @@
 <resources>
-    
+    <string name="translated_sample_text">Kao ogledni jezik aplikacije, ovaj će tekst biti samo preveden. Ako želite prevesti sav tekst u aplikaciji, morate ga dodati u datoteku sa svim nizovima. Međutim, ovaj tekst je dovoljan za razumijevanje načina primjene jezičnih postavki.</string>
 </resources>

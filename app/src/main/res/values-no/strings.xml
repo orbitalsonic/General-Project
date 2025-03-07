@@ -1,3 +1,3 @@
 <resources>
-    
+    <string name="translated_sample_text">Som et eksempel på appspråk vil denne teksten kun bli oversatt. Hvis du vil oversette all teksten i appen, må du legge den til i alle strengfilen. Men for å forstå hvordan du bruker språkinnstillinger, er denne teksten tilstrekkelig.</string>
 </resources>

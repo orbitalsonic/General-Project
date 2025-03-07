@@ -1,3 +1,3 @@
 <resources>
-    
+    <string name="translated_sample_text">作为示例应用程序语言，此文本将仅被翻译。如果要翻译应用程序中的所有文本，则需要将其添加到 all string 文件中。但是，为了了解如何应用语言设置，此文本就足够了。</string>
 </resources>

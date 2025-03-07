@@ -1,3 +1,3 @@
 <resources>
-    
+    <string name="translated_sample_text">Als voorbeeldapptaal wordt deze tekst alleen vertaald. Als je alle tekst in de app wilt vertalen, moet je deze toevoegen aan het bestand met alle tekenreeksen. Om te begrijpen hoe taalinstellingen moeten worden toegepast, is deze tekst echter voldoende.</string>
 </resources>

@@ -1,3 +1,3 @@
 <resources>
-    
+    <string name="translated_sample_text">Como exemplo de idioma do aplicativo, este texto será apenas traduzido. Se quiser traduzir todo o texto do aplicativo, você precisa adicioná-lo ao arquivo de todas as strings. No entanto, para compreender como aplicar as configurações de idioma, este texto é suficiente.</string>
 </resources>

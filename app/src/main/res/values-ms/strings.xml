@@ -1,3 +1,3 @@
 <resources>
-    
+    <string name="translated_sample_text">Sebagai contoh bahasa apl, teks ini hanya akan diterjemahkan. Jika anda ingin menterjemah semua teks dalam apl, anda perlu menambahkannya pada semua fail rentetan. Walau bagaimanapun, untuk tujuan memahami cara menggunakan tetapan bahasa, teks ini sudah memadai.</string>
 </resources>

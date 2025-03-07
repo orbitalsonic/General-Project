@@ -1,3 +1,3 @@
 <resources>
-    
+    <string name="translated_sample_text">Šis tekstas bus tik išverstas kaip programos kalbos pavyzdys. Jei norite išversti visą programėlės tekstą, turite jį įtraukti į visų eilutės failą. Tačiau norint suprasti, kaip taikyti kalbos nustatymus, pakanka šio teksto.</string>
 </resources>

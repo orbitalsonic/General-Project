@@ -1,3 +1,3 @@
 <resources>
-    
+    <string name="translated_sample_text">Tämä teksti käännetään vain esimerkkisovelluksen kielenä. Jos haluat kääntää kaiken sovelluksen tekstin, sinun on lisättävä se kaikki merkkijonotiedostoon. Tämä teksti kuitenkin riittää ymmärtämään, kuinka kieliasetuksia käytetään.</string>
 </resources>
