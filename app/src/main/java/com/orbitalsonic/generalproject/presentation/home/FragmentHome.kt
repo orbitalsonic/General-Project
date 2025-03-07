@@ -13,9 +13,18 @@ class FragmentHome : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     private fun setupClicks(){
         binding.apply {
-            btnBottomNav.setOnClickListener {  }
-            btnTabLayout.setOnClickListener {  }
-            btnLanguage.setOnClickListener {  }
+            btnBottomNav.setOnClickListener {
+                val action = FragmentHomeDirections.actionFragmentHomeToFragmentBottomNavSample()
+                navigateTo(R.id.fragmentHome,action)
+            }
+            btnTabLayout.setOnClickListener {
+                val action = FragmentHomeDirections.actionFragmentHomeToFragmentTablayoutSample()
+                navigateTo(R.id.fragmentHome,action)
+            }
+            btnLanguage.setOnClickListener {
+                val action = FragmentHomeDirections.actionFragmentHomeToFragmentLanguageSample()
+                navigateTo(R.id.fragmentHome,action)
+            }
             btnLocation.setOnClickListener {
                 val action = FragmentHomeDirections.actionFragmentHomeToFragmentLocationSample()
                 navigateTo(R.id.fragmentHome,action)

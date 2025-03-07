@@ -52,6 +52,27 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentLanguageSample"
+            app:destination="@id/fragmentLanguageSample"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentBottomNavSample"
+            app:destination="@id/fragmentBottomNavSample"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentTablayoutSample"
+            app:destination="@id/fragmentTablayoutSample"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/fragmentSettings"
@@ -86,5 +107,20 @@
         android:name="com.orbitalsonic.generalproject.presentation.samples.location.FragmentLocationSample"
         android:label="Location Sample"
         tools:layout="@layout/fragment_location_sample"/>
+    <fragment
+        android:id="@+id/fragmentLanguageSample"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.language.FragmentLanguageSample"
+        android:label="Language Sample"
+        tools:layout="@layout/fragment_language_sample"/>
+    <fragment
+        android:id="@+id/fragmentBottomNavSample"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.bottomnav.FragmentBottomNavSample"
+        android:label="BottomNav Sample"
+        tools:layout="@layout/fragment_bottom_nav_sample"/>
+    <fragment
+        android:id="@+id/fragmentTablayoutSample"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.tablayout.FragmentTablayoutSample"
+        android:label="TabLayout Sample"
+        tools:layout="@layout/fragment_tablayout_sample"/>
 
 </navigation>
