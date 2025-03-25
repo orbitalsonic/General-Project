@@ -119,7 +119,7 @@
         tools:layout="@layout/fragment_bottom_nav_sample"/>
     <fragment
         android:id="@+id/fragmentTablayoutSample"
-        android:name="com.orbitalsonic.generalproject.presentation.samples.tablayout.FragmentTablayoutSample"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.tablayout.ui.FragmentTablayoutSample"
         android:label="TabLayout Sample"
         tools:layout="@layout/fragment_tablayout_sample"/>
 

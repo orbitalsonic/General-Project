@@ -11,6 +11,12 @@
     <string name="privacy_policy">Privacy Policy</string>
     <string name="app_version">App Version</string>
 
+    <!--    Tab Layout-->
+    <string name="tab_home">Home</string>
+    <string name="tab_profile">Profile</string>
+    <string name="tab_notification">Notification</string>
+    <string name="tab_settings">Settings</string>
+
     <string name="translated_sample_text">As a sample app language, this text will only be translated. If you want to translate all the text in the app, you need to add it to the all string file. However, for the purpose of understanding how to apply language settings, this text is sufficient.</string>
 
 </resources>
