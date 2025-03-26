@@ -33,16 +33,6 @@ class FragmentTablayoutSample :
         }
         tabLayoutMediator?.attach()
 
-        // Reduce space between tabs by modifying TabLayout's child views dynamically
-      /*  binding.tabLayout.post {
-            for (i in 0 until binding.tabLayout.tabCount) {
-                val tab = (binding.tabLayout.getChildAt(0) as ViewGroup).getChildAt(i)
-                val layoutParams = tab.layoutParams as ViewGroup.MarginLayoutParams
-                layoutParams.setMargins(0, 0, 0, 0) // Adjust left & right margins (reduce spacing)
-                tab.requestLayout()
-            }
-        }*/
-
         // Add page change listener
         binding.viewPager.registerOnPageChangeCallback(pageChangeCallback)
     }
