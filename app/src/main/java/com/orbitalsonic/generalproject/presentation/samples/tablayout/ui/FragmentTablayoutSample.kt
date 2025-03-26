@@ -73,9 +73,9 @@ class FragmentTablayoutSample :
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
         tabLayoutMediator?.detach() // Remove TabLayoutMediator to prevent memory leaks
         binding.viewPager.unregisterOnPageChangeCallback(pageChangeCallback) // Unregister listener
+        super.onDestroyView()
     }
 }
 
