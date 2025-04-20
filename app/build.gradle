@@ -55,7 +55,7 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.15.0'
+    implementation 'androidx.core:core-ktx:1.16.0'
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
@@ -70,15 +70,15 @@ dependencies {
     implementation 'androidx.work:work-runtime-ktx:2.10.0'
 
     // GSON (JSON to Object & vice versa)
-    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.google.code.gson:gson:2.11.0'
 
     // SDP layout size && SSP Text sizes
     implementation 'com.intuit.sdp:sdp-android:1.1.1'
     implementation 'com.intuit.ssp:ssp-android:1.1.1'
 
     // navigation components
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.8.8'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.8.8'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.8.9'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.8.9'
 
     // Lifecycle
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.7'
@@ -90,7 +90,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
 
     // Firebase configuration with BoM
-    implementation platform('com.google.firebase:firebase-bom:33.7.0')
+    implementation platform('com.google.firebase:firebase-bom:33.12.0')
     implementation 'com.google.firebase:firebase-config'
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-crashlytics'
@@ -109,6 +109,6 @@ dependencies {
     implementation 'androidx.core:core-splashscreen:1.0.1'
 
     // Lottie Animation
-    implementation "com.airbnb.android:lottie:6.5.0"
+    implementation "com.airbnb.android:lottie:6.5.2"
 
 }
