@@ -3,10 +3,8 @@ package com.orbitalsonic.generalproject.presentation.samples.tablayout.ui
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.orbitalsonic.generalproject.R
@@ -45,19 +43,19 @@ class FragmentTablayoutSample :
         when (position) {
             0 -> {
                 tabText.text = getString(R.string.tab_home)
-                tabIcon.setImageResource(R.drawable.ic_home)
+                tabIcon.setImageResource(R.drawable.ic_nav_home)
             }
             1 -> {
                 tabText.text = getString(R.string.tab_profile)
-                tabIcon.setImageResource(R.drawable.ic_profile)
+                tabIcon.setImageResource(R.drawable.ic_nav_profile)
             }
             2 -> {
                 tabText.text = getString(R.string.tab_notification)
-                tabIcon.setImageResource(R.drawable.ic_notifications)
+                tabIcon.setImageResource(R.drawable.ic_nav_notification)
             }
             3 -> {
                 tabText.text = getString(R.string.tab_settings)
-                tabIcon.setImageResource(R.drawable.ic_settings)
+                tabIcon.setImageResource(R.drawable.ic_nav_setting)
             }
         }
         return tabView

@@ -4,10 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
@@ -24,22 +22,29 @@
         <activity
             android:name=".presentation.startup.StartupActivity"
             android:exported="true"
-            android:theme="@style/Theme.App.Starting"
-            >
+            android:theme="@style/Theme.App.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".presentation.MainActivity"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".presentation.samples.results.ResultSampleActivity"
-            android:exported="false"
-            />
+            android:exported="false" />
+        <activity
+            android:name=".presentation.samples.bottomnav.BottomNavGraphActivity"
+            android:label="Bottom Navigation"
+            android:parentActivityName=".presentation.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.samples.bottomnav.BottomNavSimpleActivity"
+            android:label="Bottom Navigation"
+            android:parentActivityName=".presentation.MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

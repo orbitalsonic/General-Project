@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.bottomnav.FragmentNavHome"
+        android:label="Home" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.bottomnav.FragmentNavProfile"
+        android:label="Profile" />
+
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.bottomnav.FragmentNavNotification"
+        android:label="Notification" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.bottomnav.FragmentNavSettings"
+        android:label="Settings" />
+</navigation>

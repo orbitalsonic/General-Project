@@ -1,17 +1,17 @@
-package com.orbitalsonic.generalproject.presentation
+package com.orbitalsonic.generalproject.presentation.samples.bottomnav
 
-import android.content.Intent
-import android.os.Build
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.orbitalsonic.generalproject.R
-import com.orbitalsonic.generalproject.databinding.ActivityMainBinding
+import com.orbitalsonic.generalproject.databinding.ActivityBottomNavGraphBinding
 import com.orbitalsonic.generalproject.helpers.ui.statusBarColorUpdate
 import com.orbitalsonic.generalproject.presentation.base.activities.BaseActivity
 
-class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+class BottomNavGraphActivity :
+    BaseActivity<ActivityBottomNavGraphBinding>(ActivityBottomNavGraphBinding::inflate) {
 
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -29,11 +29,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     }
 
     private fun initNavController() {
-        navController = (supportFragmentManager.findFragmentById(binding.navHostFragmentContainer.id) as NavHostFragment).navController
+        navController =
+            (supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment).navController
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.fragmentHome)
+            setOf(R.id.nav_home, R.id.nav_profile, R.id.nav_notification, R.id.nav_settings)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
+        binding.navView.setupWithNavController(navController)
     }
 
     private fun initNavListener() {
@@ -47,24 +49,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     private val navDestinationListener =
         NavController.OnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.fragmentHome -> {}
+                R.id.nav_home -> {}
+                R.id.nav_profile -> {}
+                R.id.nav_notification -> {}
+                R.id.nav_settings -> {}
 
                 else -> {}
             }
         }
-
-    fun moveActivity(mIntent: Intent) {
-        startActivity(mIntent)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
-            overrideActivityTransition(
-                OVERRIDE_TRANSITION_OPEN,
-                R.anim.slide_enter,
-                R.anim.slide_exit
-            )
-        } else {
-            overridePendingTransition(R.anim.slide_enter, R.anim.slide_exit)
-        }
-    }
 
     override fun onDestroy() {
         navController.removeOnDestinationChangedListener(navDestinationListener)
