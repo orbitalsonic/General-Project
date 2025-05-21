@@ -29,6 +29,15 @@
             />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_bottom_nav_pager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="@string/bottom_nav_viewpager2"
+            />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_language"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

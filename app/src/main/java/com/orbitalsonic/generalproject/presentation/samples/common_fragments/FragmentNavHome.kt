@@ -1,4 +1,4 @@
-package com.orbitalsonic.generalproject.presentation.samples.bottomnav
+package com.orbitalsonic.generalproject.presentation.samples.common_fragments
 
 import com.orbitalsonic.generalproject.databinding.FragmentNavHomeBinding
 import com.orbitalsonic.generalproject.presentation.base.fragments.BaseFragment

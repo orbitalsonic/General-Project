@@ -5,6 +5,10 @@ import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.ActivityBottomNavSimpleBinding
 import com.orbitalsonic.generalproject.helpers.ui.statusBarColorUpdate
 import com.orbitalsonic.generalproject.presentation.base.activities.BaseActivity
+import com.orbitalsonic.generalproject.presentation.samples.common_fragments.FragmentNavHome
+import com.orbitalsonic.generalproject.presentation.samples.common_fragments.FragmentNavNotification
+import com.orbitalsonic.generalproject.presentation.samples.common_fragments.FragmentNavProfile
+import com.orbitalsonic.generalproject.presentation.samples.common_fragments.FragmentNavSettings
 
 class BottomNavSimpleActivity :
     BaseActivity<ActivityBottomNavSimpleBinding>(ActivityBottomNavSimpleBinding::inflate) {

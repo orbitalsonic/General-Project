@@ -1,9 +1,11 @@
 package com.orbitalsonic.generalproject.presentation.home
 
+import android.content.Intent
 import com.orbitalsonic.generalproject.R
 import com.orbitalsonic.generalproject.databinding.FragmentHomeBinding
 import com.orbitalsonic.generalproject.helpers.navigation.navigateTo
 import com.orbitalsonic.generalproject.presentation.base.fragments.BaseFragment
+import com.orbitalsonic.generalproject.presentation.samples.bottomnavpager.BottomNavPagerActivity
 
 class FragmentHome : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
@@ -20,6 +22,9 @@ class FragmentHome : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             btnTabLayout.setOnClickListener {
                 val action = FragmentHomeDirections.actionFragmentHomeToFragmentTablayoutSample()
                 navigateTo(R.id.fragmentHome,action)
+            }
+            btnBottomNavPager.setOnClickListener {
+                startActivity(Intent(activity, BottomNavPagerActivity::class.java))
             }
             btnLanguage.setOnClickListener {
                 val action = FragmentHomeDirections.actionFragmentHomeToFragmentLanguageSample()

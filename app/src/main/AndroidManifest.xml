@@ -19,6 +19,7 @@
         android:supportsRtl="false"
         android:theme="@style/Base.Theme.GeneralProject"
         tools:targetApi="31">
+
         <activity
             android:name=".presentation.startup.StartupActivity"
             android:exported="true"
@@ -37,14 +38,21 @@
             android:exported="false" />
         <activity
             android:name=".presentation.samples.bottomnav.BottomNavGraphActivity"
+            android:exported="false"
             android:label="Bottom Navigation"
-            android:parentActivityName=".presentation.MainActivity"
-            android:exported="false" />
+            android:parentActivityName=".presentation.MainActivity" />
         <activity
             android:name=".presentation.samples.bottomnav.BottomNavSimpleActivity"
+            android:exported="false"
             android:label="Bottom Navigation"
+            android:parentActivityName=".presentation.MainActivity" />
+
+        <activity
+            android:name=".presentation.samples.bottomnavpager.BottomNavPagerActivity"
+            android:exported="false"
+            android:label="Bottom Nav Pager"
             android:parentActivityName=".presentation.MainActivity"
-            android:exported="false" />
+            />
     </application>
 
 </manifest>

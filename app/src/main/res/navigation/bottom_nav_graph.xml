@@ -6,21 +6,21 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.orbitalsonic.generalproject.presentation.samples.bottomnav.FragmentNavHome"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.common_fragments.FragmentNavHome"
         android:label="Home" />
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.orbitalsonic.generalproject.presentation.samples.bottomnav.FragmentNavProfile"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.common_fragments.FragmentNavProfile"
         android:label="Profile" />
 
     <fragment
         android:id="@+id/nav_notification"
-        android:name="com.orbitalsonic.generalproject.presentation.samples.bottomnav.FragmentNavNotification"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.common_fragments.FragmentNavNotification"
         android:label="Notification" />
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.orbitalsonic.generalproject.presentation.samples.bottomnav.FragmentNavSettings"
+        android:name="com.orbitalsonic.generalproject.presentation.samples.common_fragments.FragmentNavSettings"
         android:label="Settings" />
 </navigation>
