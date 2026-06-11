@@ -4,13 +4,9 @@ import android.Manifest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import com.orbitalsonic.generalproject.databinding.FragmentPermissionSampleBinding
-import com.orbitalsonic.generalproject.helpers.permissions.isAudioPermissionGranted
 import com.orbitalsonic.generalproject.helpers.settings.openSettingPage
-import com.orbitalsonic.generalproject.helpers.ui.showSnackBar
 import com.orbitalsonic.generalproject.helpers.ui.showToast
 import com.orbitalsonic.generalproject.presentation.base.fragments.BaseFragment
-import com.orbitalsonic.generalproject.presentation.dialogs.callbacks.OnDialogClickListener
-import com.orbitalsonic.generalproject.presentation.dialogs.myCustomDialog
 import com.orbitalsonic.generalproject.presentation.dialogs.showAlertDialog
 import com.orbitalsonic.generalproject.presentation.dialogs.showPermissionDialog
 
@@ -40,7 +36,7 @@ class FragmentPermissionSample :
 
     private fun setupClicks() {
         binding.btnPermission.setOnClickListener {
-         askForAudioPermission()
+            askForAudioPermission()
         }
     }
 

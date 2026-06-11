@@ -3,7 +3,6 @@ package com.orbitalsonic.generalproject.presentation.samples.dialogsample
 import com.orbitalsonic.generalproject.databinding.FragmentDialogSampleBinding
 import com.orbitalsonic.generalproject.helpers.ui.showToast
 import com.orbitalsonic.generalproject.presentation.base.fragments.BaseFragment
-import com.orbitalsonic.generalproject.presentation.dialogs.callbacks.OnDialogClickListener
 import com.orbitalsonic.generalproject.presentation.dialogs.myCustomDialog
 import com.orbitalsonic.generalproject.presentation.dialogs.showCountryDialog
 
@@ -22,17 +21,15 @@ class FragmentDialogSample :
                     activity.showToast(it)
                 }
             }
-
             btnCustomDialog.setOnClickListener {
-                activity.myCustomDialog(object :OnDialogClickListener{
-                    override fun onProceed() {
+                activity.myCustomDialog(
+                    onGranted = {
                         activity.showToast("Permission Granted")
-                    }
-
-                    override fun onCancel() {
+                    },
+                    onDenied = {
                         activity.showToast("Permission Denied")
                     }
-                })
+                )
             }
         }
     }

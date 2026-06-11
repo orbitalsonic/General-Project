@@ -7,41 +7,30 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<T : ViewBinding>(private val bindingFactory: (LayoutInflater) -> T) :
-    Fragment() {
+abstract class BaseFragment<T : ViewBinding>(
+    private val bindingFactory: (LayoutInflater) -> T
+) : Fragment() {
 
-    /**
-     * These properties are only valid between onCreateView and onDestroyView
-     * @property binding
-     *          -> after onCreateView
-     *          -> before onDestroyView
-     */
-    var _binding: T? = null
-    val binding get() = _binding!!
-
-    private var hasInitializedRootView = false
+    private var _binding: T? = null
+    protected val binding: T
+        get() = _binding ?: error("Binding accessed outside of view lifecycle.")
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = bindingFactory(layoutInflater)
+        _binding = bindingFactory(inflater)
+        onViewInflated()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        if (!hasInitializedRootView) {
-            hasInitializedRootView = true
-            onSingleViewCreated()
-        }
         onViewCreated()
-
     }
 
-    open fun onSingleViewCreated(){}
+    open fun onViewInflated() {}
 
     abstract fun onViewCreated()
 
@@ -49,5 +38,4 @@ abstract class BaseFragment<T : ViewBinding>(private val bindingFactory: (Layout
         super.onDestroyView()
         _binding = null
     }
-
 }
