@@ -16,8 +16,8 @@ android {
         applicationId = "com.orbitalsonic.generalproject"
         minSdk = 24
         targetSdk = 36
-        versionCode = 131
-        versionName = "3.5.131"
+        versionCode = 132
+        versionName = "3.6.132"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
