@@ -27,13 +27,29 @@ class AdapterLanguage(private val onLanguageItemClickListener: OnLanguageItemCli
         if (binding is ItemLanguageBinding) {
             binding.apply {
                 mtvLanguageName.text = currentItem.languageFullName
+                ivFlag.setImageResource(currentItem.flag)
 
-                if (currentItem.selected.not()){
-                    langItem.background = ContextCompat.getDrawable(root.context, R.drawable.bg_lang_unselected)
-                    ivLangChecked.setImageResource(R.drawable.ic_lang_radio_unchecked)
-                }else{
-                    langItem.background = ContextCompat.getDrawable(root.context, R.drawable.bg_lang_selected)
+                val context = root.context
+                if (currentItem.selected) {
+                    langItem.setBackgroundResource(R.drawable.bg_lang_selected)
+
                     ivLangChecked.setImageResource(R.drawable.ic_lang_radio_checked)
+
+                    mtvLanguageName.setTextColor(
+                        ContextCompat.getColor(context, R.color.primary500)
+                    )
+
+                } else {
+
+                    langItem.setBackgroundResource(R.drawable.bg_lang_unselected)
+
+                    ivLangChecked.setImageResource(
+                        R.drawable.ic_lang_radio_unchecked
+                    )
+
+                    mtvLanguageName.setTextColor(
+                        ContextCompat.getColor(context, R.color.neutral500)
+                    )
                 }
 
                 langItem.setOnClickListener {
