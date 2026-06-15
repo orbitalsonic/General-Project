@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Com a idioma d\'aplicació de mostra, aquest text només es traduirà. Si voleu traduir tot el text de l\'aplicació, heu d\'afegir-lo al fitxer de totes les cadenes. Tanmateix, per entendre com aplicar la configuració d\'idioma, aquest text és suficient.</string>
+    <string name="translated_sample_text">Jakožto ukázkový jazyk aplikace bude tento text pouze přeložen. Pokud chcete přeložit veškerý text v aplikaci, musíte jej přidat do souboru se všemi řetězci. Pro pochopení, jak použít nastavení jazyka, je však tento text dostatečný.</string>
+
 </resources>

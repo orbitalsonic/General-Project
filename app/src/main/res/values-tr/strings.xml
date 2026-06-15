@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Örnek uygulama dili olarak bu metin yalnızca çevrilecektir. Uygulamadaki metnin tamamını çevirmek istiyorsanız bunu all string dosyasına eklemeniz gerekir. Ancak dil ayarlarının nasıl uygulanacağını anlamak açısından bu metin yeterlidir.</string>
+    <string name="translated_sample_text">Bu metin, örnek bir uygulama dili olarak yalnızca çevrilecektir. Uygulamadaki tüm metni çevirmek istiyorsanız, bunu tüm metin dosyasına eklemeniz gerekir. Ancak, dil ayarlarının nasıl uygulanacağını anlamak amacıyla bu metin yeterlidir.</string>
+
 </resources>

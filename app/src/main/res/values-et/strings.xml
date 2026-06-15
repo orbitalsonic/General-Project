@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Rakenduse näidiskeelena tõlgitakse see tekst ainult. Kui soovite tõlkida kogu rakenduse teksti, peate selle lisama kogu stringi faili. Keeleseadete rakendamise mõistmiseks piisab sellest tekstist.</string>
+    <string name="translated_sample_text">Näidisrakenduse keelena tõlgitakse seda teksti ainult. Kui soovite tõlkida kogu rakenduses oleva teksti, peate selle lisama kõigi stringide faili. Keeleseadete rakendamise mõistmiseks piisab sellest tekstist.</string>
+
 </resources>

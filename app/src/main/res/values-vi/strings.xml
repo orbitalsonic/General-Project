@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Là ngôn ngữ ứng dụng mẫu, văn bản này sẽ chỉ được dịch. Nếu bạn muốn dịch tất cả văn bản trong ứng dụng, bạn cần thêm nó vào tệp toàn chuỗi. Tuy nhiên, với mục đích hiểu cách áp dụng cài đặt ngôn ngữ, văn bản này là đủ.</string>
+    <string name="translated_sample_text">Đây chỉ là văn bản mẫu cho ứng dụng, và sẽ chỉ dịch đoạn văn bản này. Nếu bạn muốn dịch toàn bộ văn bản trong ứng dụng, bạn cần thêm nó vào tệp "all string". Tuy nhiên, để hiểu cách áp dụng cài đặt ngôn ngữ, đoạn văn bản này là đủ.</string>
+
 </resources>

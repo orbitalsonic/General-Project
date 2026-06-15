@@ -1,0 +1,4 @@
+<resources>
+    <string name="translated_sample_text">Kao primjer jezika aplikacije, ovaj tekst će biti samo preveden. Ako želite prevesti sav tekst u aplikaciji, potrebno ga je dodati u datoteku sa svim stringovima. Međutim, radi razumijevanja kako primijeniti jezičke postavke, ovaj tekst je dovoljan.</string>
+
+</resources>

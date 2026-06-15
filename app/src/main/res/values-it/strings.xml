@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Come lingua dell\'app di esempio, questo testo verrà solo tradotto. Se vuoi tradurre tutto il testo nell\'app, devi aggiungerlo al file all string. Tuttavia, per comprendere come applicare le impostazioni della lingua, questo testo è sufficiente.</string>
+    <string name="translated_sample_text">Questo testo, utilizzato come esempio di lingua per l\'app, verrà tradotto soltanto. Se si desidera tradurre tutto il testo dell\'app, è necessario aggiungerlo al file contenente tutte le stringhe. Tuttavia, ai fini della comprensione di come applicare le impostazioni della lingua, questo testo è sufficiente.</string>
+
 </resources>

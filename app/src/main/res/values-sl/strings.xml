@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Kot vzorčni jezik aplikacije bo to besedilo samo prevedeno. Če želite prevesti celotno besedilo v aplikaciji, ga morate dodati v datoteko vseh nizov. Za razumevanje uporabe jezikovnih nastavitev pa to besedilo zadostuje.</string>
+    <string name="translated_sample_text">Ker gre za vzorčni jezik aplikacije, bo to besedilo samo prevedeno. Če želite prevesti vse besedilo v aplikaciji, ga morate dodati v datoteko z vsemi nizi. Vendar pa je to besedilo zadostno za razumevanje uporabe jezikovnih nastavitev.</string>
+
 </resources>

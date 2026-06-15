@@ -1,0 +1,4 @@
+<resources>
+    <string name="translated_sample_text">Si një shembull gjuhe aplikacioni, ky tekst do të përkthehet vetëm. Nëse doni të përktheni të gjithë tekstin në aplikacion, duhet ta shtoni atë në skedarin all string. Megjithatë, për të kuptuar se si të aplikoni cilësimet e gjuhës, ky tekst është i mjaftueshëm.</string>
+
+</resources>

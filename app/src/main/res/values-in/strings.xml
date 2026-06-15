@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Sebagai contoh bahasa aplikasi, teks ini hanya akan diterjemahkan. Jika Anda ingin menerjemahkan semua teks dalam aplikasi, Anda perlu menambahkannya ke file semua string. Namun, untuk memahami cara menerapkan pengaturan bahasa, teks ini sudah cukup.</string>
+    <string name="translated_sample_text">Sebagai contoh bahasa aplikasi, teks ini saja yang akan diterjemahkan. Jika Anda ingin menerjemahkan semua teks di aplikasi, Anda perlu menambahkannya ke file string "all". Namun, untuk tujuan memahami cara menerapkan pengaturan bahasa, teks ini sudah cukup.</string>
+
 </resources>

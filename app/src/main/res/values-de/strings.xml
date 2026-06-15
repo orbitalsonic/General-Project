@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Als Beispiel-App-Sprache wird dieser Text nur übersetzt. Wenn Sie den gesamten Text in der App übersetzen möchten, müssen Sie ihn zur All-String-Datei hinzufügen. Um jedoch zu verstehen, wie Spracheinstellungen vorgenommen werden, ist dieser Text ausreichend.</string>
+    <string name="translated_sample_text">Dieser Text dient als Beispiel für die App-Sprache und wird daher nur einmal übersetzt. Um den gesamten Text der App zu übersetzen, müssen Sie ihn der Datei „All Strings“ hinzufügen. Für das Verständnis der Spracheinstellungen ist dieser Text jedoch ausreichend.</string>
+
 </resources>

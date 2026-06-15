@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Az alkalmazás nyelvének példaként ezt a szöveget csak lefordítják. Ha le szeretné fordítani az alkalmazásban található összes szöveget, hozzá kell adnia az összes karakterlánc fájlhoz. A nyelvi beállítások alkalmazásának megértéséhez azonban ez a szöveg elegendő.</string>
+    <string name="translated_sample_text">Mintaalkalmazás-nyelvként ez a szöveg csak fordításra kerül. Ha az alkalmazásban található összes szöveget le szeretnéd fordítani, hozzá kell adnod a teljes karakterláncot tartalmazó fájlhoz. A nyelvi beállítások alkalmazásának megértéséhez azonban ez a szöveg elegendő.</string>
+
 </resources>

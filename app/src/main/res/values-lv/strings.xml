@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Kā lietotņu valodas paraugs šis teksts tiks tulkots tikai. Ja vēlaties tulkot visu lietotnē esošo tekstu, tas jāpievieno visu virkņu failam. Tomēr, lai saprastu, kā lietot valodas iestatījumus, pietiek ar šo tekstu.</string>
+    <string name="translated_sample_text">Kā lietotnes valodas paraugs šis teksts tiks tikai tulkots. Ja vēlaties tulkot visu lietotnes tekstu, tas jāpievieno visu virkņu failam. Tomēr, lai izprastu, kā lietot valodas iestatījumus, šis teksts ir pietiekams.</string>
+
 </resources>

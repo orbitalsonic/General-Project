@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Ako vzorový jazyk aplikácie bude tento text iba preložený. Ak chcete preložiť celý text v aplikácii, musíte ho pridať do súboru všetkých reťazcov. Na pochopenie toho, ako použiť jazykové nastavenia, však tento text postačuje.</string>
+    <string name="translated_sample_text">Keďže ide o vzorový jazyk aplikácie, tento text bude iba preložený. Ak chcete preložiť všetok text v aplikácii, musíte ho pridať do súboru so všetkými reťazcami. Na pochopenie postupu použitia jazykových nastavení je však tento text postačujúci.</string>
+
 </resources>

@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Ca exemplu de limbă a aplicației, acest text va fi tradus numai. Dacă doriți să traduceți tot textul din aplicație, trebuie să îl adăugați la fișierul cu toate șirurile. Cu toate acestea, în scopul înțelegerii modului de aplicare a setărilor de limbă, acest text este suficient.</string>
+    <string name="translated_sample_text">Ca exemplu de limbă pentru aplicație, acest text va fi doar tradus. Dacă doriți să traduceți tot textul din aplicație, trebuie să îl adăugați în fișierul cu toate șirurile de caractere. Cu toate acestea, pentru a înțelege cum se aplică setările de limbă, acest text este suficient.</string>
+
 </resources>

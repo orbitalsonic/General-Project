@@ -1,0 +1,4 @@
+<resources>
+    <string name="translated_sample_text">Como exemplo de idioma de aplicación, este texto só se traducirá. Se queres traducir todo o texto da aplicación, debes engadilo ao ficheiro de cadeas. Non obstante, para comprender como aplicar a configuración de idioma, este texto é suficiente.</string>
+
+</resources>

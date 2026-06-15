@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">Como idioma de aplicación de muestra, este texto solo se traducirá. Si desea traducir todo el texto de la aplicación, debe agregarlo al archivo de todas las cadenas. Sin embargo, para comprender cómo aplicar la configuración de idioma, este texto es suficiente.</string>
+    <string name="translated_sample_text">Este texto, que sirve como ejemplo de idioma para la aplicación, solo se traducirá. Si desea traducir todo el texto de la aplicación, debe agregarlo al archivo de cadenas de texto. Sin embargo, para comprender cómo aplicar la configuración de idioma, este texto es suficiente.</string>
+
 </resources>

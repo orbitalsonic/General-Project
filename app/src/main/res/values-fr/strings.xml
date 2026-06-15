@@ -1,3 +1,4 @@
 <resources>
-    <string name="translated_sample_text">En tant qu\'exemple de langue d\'application, ce texte sera uniquement traduit. Si vous souhaitez traduire tout le texte de l\'application, vous devez l\'ajouter au fichier de chaînes. Cependant, pour comprendre comment appliquer les paramètres de langue, ce texte est suffisant.</string>
+    <string name="translated_sample_text">À titre d\'exemple, seul ce texte sera traduit. Pour traduire l\'intégralité du texte de l\'application, vous devez l\'ajouter au fichier contenant toutes les chaînes. Toutefois, pour comprendre comment appliquer les paramètres de langue, ce texte est suffisant.</string>
+
 </resources>
