@@ -1,7 +1,6 @@
 [versions]
-agp = "9.2.1"
+agp = "9.3.1"
 kotlin = "2.4.0"
-ksp = "2.3.9"
 navigation = "2.9.8"
 googleServices = "4.4.4"
 firebaseCrashlytics = "3.0.7"
@@ -9,7 +8,7 @@ firebaseCrashlytics = "3.0.7"
 coreKtx = "1.19.0"
 appcompat = "1.7.1"
 material = "1.14.0"
-constraintlayout = "2.2.1"
+constraintlayout = "2.2.2"
 activityKtx = "1.13.0"
 fragmentKtx = "1.8.9"
 workRuntimeKtx = "2.11.2"
@@ -50,16 +49,13 @@ firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
-glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
 lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlytics" }

@@ -151,6 +151,8 @@ class LocationViewModel : ViewModel() {
             viewModelScope.launch(Dispatchers.IO) {
                 try {
                     val geocoder = Geocoder(context, Locale.getDefault())
+
+                    @Suppress("DEPRECATION")
                     val addresses = geocoder.getFromLocation(location.latitude, location.longitude, 1)
 
                     val address = addresses?.firstOrNull()?.getAddressLine(0)
@@ -194,6 +196,8 @@ class LocationViewModel : ViewModel() {
             viewModelScope.launch(Dispatchers.IO) {
                 try {
                     val geocoder = Geocoder(context, Locale.getDefault())
+
+                    @Suppress("DEPRECATION")
                     val addresses = geocoder.getFromLocation(location.latitude, location.longitude, 1)
 
                     val address = addresses?.firstOrNull()?.getAddressLine(0)

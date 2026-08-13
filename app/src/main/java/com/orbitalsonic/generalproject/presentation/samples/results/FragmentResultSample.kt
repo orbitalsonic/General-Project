@@ -3,8 +3,8 @@ package com.orbitalsonic.generalproject.presentation.samples.results
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
-import android.os.Build
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.IntentCompat
 import com.orbitalsonic.generalproject.databinding.FragmentResultSampleBinding
 import com.orbitalsonic.generalproject.helpers.constants.IntentConstants.FOR_ANIMALS
 import com.orbitalsonic.generalproject.helpers.constants.IntentConstants.FOR_BIRDS
@@ -20,15 +20,9 @@ class FragmentResultSample :
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == Activity.RESULT_OK) {
                 it.data?.apply {
+                    // IntentCompat handles the API 33 split internally.
                     val wildModel =
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                            getParcelableExtra(
-                                WILDLIFE_DATA,
-                                WildModel::class.java
-                            )
-                        } else {
-                            getParcelableExtra(WILDLIFE_DATA) as? WildModel
-                        }
+                        IntentCompat.getParcelableExtra(this, WILDLIFE_DATA, WildModel::class.java)
 
                     setResult(wildModel)
                 }

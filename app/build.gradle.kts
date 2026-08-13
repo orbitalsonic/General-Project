@@ -1,21 +1,23 @@
 plugins {
+    // Kotlin support is built into AGP 9 - the kotlin-android plugin is no longer applied.
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.navigation.safeargs)
-    alias(libs.plugins.ksp)
     alias(libs.plugins.google.services)
     alias(libs.plugins.firebase.crashlytics)
 }
 
 android {
     namespace = "com.orbitalsonic.generalproject"
-    compileSdk = 37
+
+    compileSdk {
+        version = release(37)
+    }
 
     defaultConfig {
         applicationId = "com.orbitalsonic.generalproject"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 133
         versionName = "3.6.133"
 
@@ -30,18 +32,20 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            // Replaces isMinifyEnabled + isShrinkResources + proguardFiles.
+            // Custom keep rules live in app/src/main/keepRules/
+            optimization {
+                enable = true
+                keepRules {
+                    // Equivalent of getDefaultProguardFile("proguard-android-optimize.txt")
+                    includeDefault = true
+                }
+            }
         }
         debug {
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            optimization {
+                enable = false
+            }
         }
     }
 
@@ -54,10 +58,6 @@ android {
         viewBinding = true
         buildConfig = true
     }
-}
-
-kotlin {
-    jvmToolchain(17)
 }
 
 dependencies {
@@ -94,7 +94,6 @@ dependencies {
     implementation(libs.koin.android)
 
     implementation(libs.glide)
-    annotationProcessor(libs.glide.compiler)
 
     implementation(libs.play.services.location)
 

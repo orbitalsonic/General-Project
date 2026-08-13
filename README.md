@@ -34,6 +34,26 @@ Each topic includes explanations, sample code, and real-world use cases to ensur
 
 ---
 
+## 🤖 AI Coding Rules
+
+This template ships with engineering rules so AI assistants generate code that matches the project.
+Copy these along with the template into any new project.
+
+```
+.cursor/rules/          # Cursor rules (01-11 always on, 12-13 workflow rules)
+CLAUDE.md               # Claude Code project guide (points at the same rules)
+.claude/skills/         # Claude Code workflows
+    android-new-project/
+    android-new-feature/
+    android-update-project/
+```
+
+`.cursor/rules/*.mdc` is the single source of truth for both tools — based on
+[AndroidPilot](https://github.com/orbitalsonic/AndroidPilot) and adapted to this template's
+MVVM + feature-package structure, base classes, helper catalog, theming and localization setup.
+
+---
+
 ## 📢 Contributing
 Contributions are welcome! Feel free to:
 - Open an issue for discussion.

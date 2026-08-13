@@ -62,6 +62,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                 R.anim.slide_exit
             )
         } else {
+            @Suppress("DEPRECATION")
             overridePendingTransition(R.anim.slide_enter, R.anim.slide_exit)
         }
     }

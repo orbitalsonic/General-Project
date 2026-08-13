@@ -1,7 +1,6 @@
 package com.orbitalsonic.generalproject.helpers.ui
 
 import android.app.Activity
-import android.content.Context
 import android.os.Build
 import android.os.IBinder
 import android.view.View
@@ -27,7 +26,13 @@ import com.orbitalsonic.generalproject.helpers.theme.isDarkThemeEnabled
 fun Activity.statusBarColorUpdate(color: Int = R.color.surfaceColor) {
     try {
         val statusBarColor = ContextCompat.getColor(this, color)
-        window.statusBarColor = statusBarColor
+
+        // Android 15 (API 35) enforces edge-to-edge and ignores this call: from there on the
+        // status bar shows whatever the layout draws behind it. Kept for older devices.
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+            @Suppress("DEPRECATION")
+            window.statusBarColor = statusBarColor
+        }
 
         // Light background -> dark icons, dark background -> light icons
         val useDarkIcons = ColorUtils.calculateLuminance(statusBarColor) > 0.5
@@ -89,9 +94,9 @@ fun Activity.showSystemUI() {
 
 fun Activity.showKeyboard() {
     try {
-        val imm: InputMethodManager? =
-            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
-        imm?.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
+        // Requires a focused editable view - focus the input before calling this.
+        val focusedView = currentFocus ?: window.decorView
+        WindowInsetsControllerCompat(window, focusedView).show(WindowInsetsCompat.Type.ime())
     } catch (ex: Exception) {
         ex.printStackTrace()
     }
@@ -109,19 +114,13 @@ fun Activity.hideKeyboard() {
 }
 
 fun Activity.hideStatusBar() {
-    // Check the SDK version because the approach differs for different versions
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-        // For API level 30 and above
-        window.setDecorFitsSystemWindows(false)
-        window.insetsController?.let {
-            it.hide(WindowInsets.Type.statusBars())
-            it.systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+    try {
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        WindowInsetsControllerCompat(window, window.decorView).apply {
+            hide(WindowInsetsCompat.Type.statusBars())
+            systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
-    } else {
-        // For API level below 30
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
+    } catch (ex: Exception) {
+        ex.printStackTrace()
     }
 }

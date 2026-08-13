@@ -2,6 +2,7 @@ package com.orbitalsonic.generalproject.helpers.ui
 
 import android.app.Activity
 import android.hardware.display.DisplayManager
+import android.os.Build
 import android.util.DisplayMetrics
 import android.view.Display
 import androidx.core.content.getSystemService
@@ -45,9 +46,16 @@ fun Activity?.getScreenHeight(): Int {
 fun Activity?.isSupportFullScreen(): Boolean {
     try {
         this?.let {
-            val outMetrics = DisplayMetrics()
-            it.windowManager.defaultDisplay.getMetrics(outMetrics)
-            if (outMetrics.heightPixels > 1280) {
+            val heightPixels = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                it.windowManager.currentWindowMetrics.bounds.height()
+            } else {
+                @Suppress("DEPRECATION")
+                DisplayMetrics().also { metrics ->
+                    it.windowManager.defaultDisplay.getMetrics(metrics)
+                }.heightPixels
+            }
+
+            if (heightPixels > 1280) {
                 return true
             }
         }

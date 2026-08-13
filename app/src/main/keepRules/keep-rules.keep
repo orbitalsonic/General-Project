@@ -1,0 +1,23 @@
+# R8 keep rules for this module.
+#
+# AGP 9 replaces `proguardFiles` with the `keepRules` source folder:
+# every *.pro file in src/<sourceSet>/keepRules/ is applied automatically
+# when `optimization { enable = true }` is set for the build type.
+#
+# The default optimized rule file (proguard-android-optimize.txt) is applied
+# through `optimization { keepRules { includeDefault = true } }`.
+
+# Keep line numbers for readable Crashlytics stack traces, hide the source file name.
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
+
+# Models sent through Intents/Bundles or serialized with Gson.
+-keepclassmembers class * implements java.io.Serializable { *; }
+-keepclassmembers class * implements android.os.Parcelable { *; }
+-keepnames class * extends android.os.Parcelable
+-keepnames class * extends java.io.Serializable
+
+# If the app uses a WebView with a JavaScript interface, keep it:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
