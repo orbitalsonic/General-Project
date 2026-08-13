@@ -29,7 +29,7 @@
         android:maxLines="1"
         android:paddingHorizontal="@dimen/_10sdp"
         tools:text="English"
-        android:textColor="@color/neutral400"
+        android:textColor="@color/onSurface"
         android:textSize="@dimen/_12ssp"
         android:layout_gravity="center"
         android:layout_weight="1"

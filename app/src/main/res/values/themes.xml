@@ -1,7 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base application theme. -->
-    <style name="Base.Theme.GeneralProject" parent="Theme.Material3.Light.NoActionBar">
+    <!--
+        Base application theme.
+        "DayNight" makes the theme follow the current night mode, so all resources
+        qualified with "-night" (colors, drawables, styles) are picked automatically.
+    -->
+    <style name="Base.Theme.GeneralProject" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary500</item>
         <item name="colorPrimaryVariant">@color/primary600</item>
@@ -10,11 +14,32 @@
         <item name="colorSecondary">@color/secondary500</item>
         <item name="colorSecondaryVariant">@color/secondary700</item>
         <item name="colorOnSecondary">@color/white</item>
+        <!-- Surfaces & backgrounds (theme aware). -->
+        <item name="android:windowBackground">@color/surfaceColor</item>
+        <item name="colorSurface">@color/surfaceColor</item>
+        <item name="colorOnSurface">@color/onSurface</item>
+        <item name="android:textColorPrimary">@color/onSurface</item>
+        <item name="android:textColorSecondary">@color/onSurfaceMessage</item>
+        <item name="android:textColorHint">@color/onSurfaceHint</item>
+        <item name="colorOutline">@color/outlineColor</item>
+        <!-- Dialogs created with MaterialAlertDialogBuilder. -->
+        <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
+    </style>
+
+    <!--    Alert Dialog Style-->
+    <style name="AlertDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorSurface">@color/cardBackground</item>
+        <item name="colorOnSurface">@color/onCard</item>
+        <item name="android:textColorPrimary">@color/onCard</item>
+        <item name="android:textColorSecondary">@color/onCardMessage</item>
+        <item name="colorControlActivated">@color/primary500</item>
+        <item name="colorControlHighlight">@color/rippleColor</item>
+        <item name="colorAccent">@color/primary500</item>
     </style>
 
     <!--    Bottom Navigation Style-->
     <style name="Widget.App.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
-        <item name="android:background">@color/white</item>
+        <item name="android:background">@color/navBackground</item>
         <item name="labelVisibilityMode">labeled</item>
         <item name="itemActiveIndicatorStyle">@style/Active.Indicator</item>
         <item name="itemIconTint">@color/bottom_nav_icon_color</item>
@@ -25,7 +50,7 @@
     </style>
 
     <style name="Active.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">@color/primary100</item>
+        <item name="android:color">@color/navIndicator</item>
     </style>
 
     <style name="BottomNavTextAppearance" parent="TextAppearance.MaterialComponents.Caption">

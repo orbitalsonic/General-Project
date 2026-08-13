@@ -36,7 +36,7 @@ class AdapterLanguage(private val onLanguageItemClickListener: OnLanguageItemCli
                     ivLangChecked.setImageResource(R.drawable.ic_lang_radio_checked)
 
                     mtvLanguageName.setTextColor(
-                        ContextCompat.getColor(context, R.color.primary500)
+                        ContextCompat.getColor(context, R.color.navSelected)
                     )
 
                 } else {
@@ -48,7 +48,7 @@ class AdapterLanguage(private val onLanguageItemClickListener: OnLanguageItemCli
                     )
 
                     mtvLanguageName.setTextColor(
-                        ContextCompat.getColor(context, R.color.neutral500)
+                        ContextCompat.getColor(context, R.color.onSurface)
                     )
                 }
 

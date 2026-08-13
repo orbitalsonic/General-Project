@@ -10,41 +10,51 @@ import android.view.WindowInsetsController
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.ColorUtils
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.FragmentContainerView
 import com.orbitalsonic.generalproject.R
+import com.orbitalsonic.generalproject.helpers.theme.isDarkThemeEnabled
 
-fun Activity.statusBarColorUpdate(color: Int = R.color.white) {
+/**
+ * Paints the status bar with [color] and picks the icon color that stays readable on it.
+ *
+ * The default is the theme aware surface color, so the status bar follows
+ * the dark/light theme automatically.
+ */
+fun Activity.statusBarColorUpdate(color: Int = R.color.surfaceColor) {
     try {
-        window.statusBarColor = ContextCompat.getColor(this, color)
+        val statusBarColor = ContextCompat.getColor(this, color)
+        window.statusBarColor = statusBarColor
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            if (color == R.color.white) {
-                val windowInsetsController = WindowInsetsControllerCompat(window, window.decorView)
-                windowInsetsController.isAppearanceLightStatusBars =
-                    true
-            }else{
-                val windowInsetsController = WindowInsetsControllerCompat(window, window.decorView)
-                windowInsetsController.isAppearanceLightStatusBars =
-                    false  // Disable light status bar for light icons
-            }
-        } else {
-            // Clear SYSTEM_UI_FLAG_LIGHT_STATUS_BAR for older Android versions
-            if (color == R.color.white) {
-                window.decorView.systemUiVisibility =
-                    window.decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-            } else {
-                window.decorView.systemUiVisibility =
-                    window.decorView.systemUiVisibility and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
-            }
-        }
+        // Light background -> dark icons, dark background -> light icons
+        val useDarkIcons = ColorUtils.calculateLuminance(statusBarColor) > 0.5
+
+        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars =
+            useDarkIcons
 
     } catch (ex: Exception) {
         ex.printStackTrace()
     }
 
+}
+
+/**
+ * Keeps the system bar icons readable against the current theme,
+ * useful for screens that do not paint their own status bar color.
+ */
+fun Activity.systemBarsIconsUpdate() {
+    try {
+        val isDarkTheme = isDarkThemeEnabled()
+        WindowInsetsControllerCompat(window, window.decorView).apply {
+            isAppearanceLightStatusBars = !isDarkTheme
+            isAppearanceLightNavigationBars = !isDarkTheme
+        }
+    } catch (ex: Exception) {
+        ex.printStackTrace()
+    }
 }
 
 fun Activity.hideSystemUI(fcvContainerMain: FragmentContainerView) {

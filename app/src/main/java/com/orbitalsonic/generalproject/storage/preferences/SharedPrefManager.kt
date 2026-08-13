@@ -1,10 +1,11 @@
 package com.orbitalsonic.generalproject.storage.preferences
 
 import android.content.SharedPreferences
+import com.orbitalsonic.generalproject.helpers.theme.AppTheme
 
 private const val FIRST_TIME_ENTRANCE_KEY = "first_time_entrance"
 private const val APP_LANGUAGE_CODE_KEY = "app_language_code"
-private const val DARK_MODE_KEY = "dark_mode"
+private const val APP_THEME_MODE_KEY = "app_theme_mode"
 
 class SharedPrefManager(private val sharedPreferences: SharedPreferences) {
 
@@ -26,11 +27,16 @@ class SharedPrefManager(private val sharedPreferences: SharedPreferences) {
             }
         }
 
-    var isDarkMode: Boolean
-        get() = sharedPreferences.getBoolean(DARK_MODE_KEY, false)
+    /**
+     *  0 -> Dark
+     *  1 -> Light
+     * -1 -> System Default
+     */
+    var appThemeMode: Int
+        get() = sharedPreferences.getInt(APP_THEME_MODE_KEY, AppTheme.SYSTEM)
         set(value) {
             sharedPreferences.edit().apply {
-                putBoolean(DARK_MODE_KEY, value)
+                putInt(APP_THEME_MODE_KEY, value)
                 apply()
             }
         }

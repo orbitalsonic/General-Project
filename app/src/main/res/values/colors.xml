@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--    Common Colors (same in both themes)-->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <!--
+        Theme Aware Colors
+        Every color below has a dark counterpart in "values-night/colors.xml".
+        Always use these semantic colors in layouts/drawables instead of the raw
+        palette colors, so the UI switches automatically with the app theme.
+    -->
     <color name="surfaceColor">#FFFFFF</color>
+    <color name="onSurface">#2C2C2C</color>
+    <color name="onSurfaceMessage">#565656</color>
+    <color name="onSurfaceHint">#727272</color>
+    <color name="surfaceVariant">#FBF9F9</color>
+
+    <color name="cardBackground">#FFFFFF</color>
+    <color name="onCard">#2C2C2C</color>
+    <color name="onCardMessage">#565656</color>
+    <color name="onCardIcon">#F2F4F5</color>
+
+    <color name="outlineColor">#EAEAEA</color>
+    <color name="rippleColor">#EAEAEA</color>
+    <color name="splashColor">#FFFFFF</color>
+
+    <color name="error">#FF3B3B</color>
+    <color name="success">#00C769</color>
+    <color name="warning">#DFB000</color>
+
+    <!--    Bottom Navigation / Tabs (theme aware)-->
+    <color name="navBackground">#FFFFFF</color>
+    <color name="navSelected">#005F60</color>
+    <color name="navUnselected">#727272</color>
+    <color name="navIndicator">#B0CDCE</color>
+
+    <color name="tabSelectedBackground">#005F60</color>
+    <color name="tabUnselectedBackground">#FFFFFF</color>
+    <color name="tabSelectedText">#FFFFFF</color>
+    <color name="tabUnselectedText">#565656</color>
+
+    <!--    Tab Sample Gradient (theme aware)-->
+    <color name="tabSampleBase">#FDFDFD</color>
+    <color name="tabSampleGradient1">#FFFFFCE1</color>
+    <color name="tabSampleGradient2">#FFF4EEF1</color>
+    <color name="tabSampleGradient3">#FFF0F7FB</color>
+    <color name="tabSampleGradient4">#FFF9F4FE</color>
 
     <!--    Primary Colors-->
     <color name="primary50">#E6EFEF</color>

@@ -26,8 +26,46 @@
             android:includeFontPadding="false"
             android:maxLines="2"
             android:text="@string/app_language"
-            android:textColor="@color/neutral500"
+            android:textColor="@color/onSurface"
             android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/btn_app_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/ic_st_theme"
+                android:drawablePadding="@dimen/_15sdp"
+                android:ellipsize="end"
+                android:gravity="center|start"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:text="@string/app_theme"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtv_theme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:ellipsize="end"
+                android:gravity="center|start"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/onSurfaceMessage"
+                android:textSize="14sp"
+                tools:text="System Default" />
+        </LinearLayout>
 
 
         <com.google.android.material.textview.MaterialTextView
@@ -43,7 +81,7 @@
             android:includeFontPadding="false"
             android:maxLines="2"
             android:text="@string/rate_on_play_store"
-            android:textColor="@color/neutral500"
+            android:textColor="@color/onSurface"
             android:textSize="16sp" />
 
 
@@ -60,7 +98,7 @@
             android:includeFontPadding="false"
             android:maxLines="2"
             android:text="@string/share_app_with_friends"
-            android:textColor="@color/neutral500"
+            android:textColor="@color/onSurface"
             android:textSize="16sp" />
 
 
@@ -78,7 +116,7 @@
             android:includeFontPadding="false"
             android:maxLines="2"
             android:text="@string/contact_us"
-            android:textColor="@color/neutral500"
+            android:textColor="@color/onSurface"
             android:textSize="16sp" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -94,7 +132,7 @@
             android:includeFontPadding="false"
             android:maxLines="2"
             android:text="@string/report_bugs_issues"
-            android:textColor="@color/neutral500"
+            android:textColor="@color/onSurface"
             android:textSize="16sp" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -110,7 +148,7 @@
             android:includeFontPadding="false"
             android:maxLines="2"
             android:text="@string/privacy_policy"
-            android:textColor="@color/neutral500"
+            android:textColor="@color/onSurface"
             android:textSize="16sp" />
 
 
@@ -135,7 +173,7 @@
                 android:includeFontPadding="false"
                 android:maxLines="2"
                 android:text="@string/app_version"
-                android:textColor="@color/neutral500"
+                android:textColor="@color/onSurface"
                 android:textSize="16sp" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -148,7 +186,7 @@
                 android:gravity="center|start"
                 android:includeFontPadding="false"
                 android:maxLines="2"
-                android:textColor="@color/neutral400"
+                android:textColor="@color/onSurfaceMessage"
                 android:textSize="14sp"
                 tools:text="1.0.1" />
         </LinearLayout>

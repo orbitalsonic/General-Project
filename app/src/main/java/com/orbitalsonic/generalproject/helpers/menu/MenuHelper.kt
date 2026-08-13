@@ -50,7 +50,7 @@ fun setIconVisiblePopup(popupMenu: PopupMenu) {
 @SuppressLint("RestrictedApi", "DiscouragedPrivateApi")
 fun Context?.setIconVisibleOrTintPopup(popupMenu: PopupMenu) {
     try {
-        val color = ContextCompat.getColor(this!!, R.color.black)
+        val color = ContextCompat.getColor(this!!, R.color.onCard)
 
         val field = PopupMenu::class.java.getDeclaredField("mPopup")
         field.isAccessible = true

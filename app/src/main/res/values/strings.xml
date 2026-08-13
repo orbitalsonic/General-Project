@@ -4,6 +4,14 @@
     <!--    Settings-->
     <string name="settings">Settings</string>
     <string name="app_language">App Language</string>
+    <string name="app_theme">App Theme</string>
+
+    <!--    Theme-->
+    <string name="choose_theme">Choose Theme</string>
+    <string name="theme_system_default">System Default</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="cancel">Cancel</string>
     <string name="rate_on_play_store">Rate on Play Store</string>
     <string name="share_app_with_friends">Share app with friends</string>
     <string name="contact_us">Contact Us</string>

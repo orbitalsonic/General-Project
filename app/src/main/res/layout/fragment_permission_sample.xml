@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:textSize="@dimen/_12ssp"
-        android:textColor="@color/neutral500"
+        android:textColor="@color/onSurface"
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="@dimen/_20sdp"
         app:layout_constraintStart_toStartOf="parent"

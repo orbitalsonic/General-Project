@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Dark Theme Colors
+        Only the theme aware (semantic) colors of "values/colors.xml" are overridden here.
+        The raw palette (primary/secondary/neutral) stays the same in both themes.
+    -->
+    <color name="surfaceColor">#121212</color>
+    <color name="onSurface">#E2E8F0</color>
+    <color name="onSurfaceMessage">#A1A1A1</color>
+    <color name="onSurfaceHint">#8A8A8A</color>
+    <color name="surfaceVariant">#1E1E1E</color>
+
+    <color name="cardBackground">#1A1A1A</color>
+    <color name="onCard">#E2E8F0</color>
+    <color name="onCardMessage">#A1A1A1</color>
+    <color name="onCardIcon">#2E2E2E</color>
+
+    <color name="outlineColor">#343434</color>
+    <color name="rippleColor">#242424</color>
+    <color name="splashColor">#121212</color>
+
+    <color name="error">#FF6B6B</color>
+    <color name="success">#00C769</color>
+    <color name="warning">#DFB000</color>
+
+    <!--    Bottom Navigation / Tabs-->
+    <color name="navBackground">#1A1A1A</color>
+    <color name="navSelected">#8AB5B6</color>
+    <color name="navUnselected">#9E9E9E</color>
+    <color name="navIndicator">#003435</color>
+
+    <color name="tabSelectedBackground">#005F60</color>
+    <color name="tabUnselectedBackground">#1A1A1A</color>
+    <color name="tabSelectedText">#FFFFFF</color>
+    <color name="tabUnselectedText">#A1A1A1</color>
+
+    <!--    Tab Sample Gradient-->
+    <color name="tabSampleBase">#141414</color>
+    <color name="tabSampleGradient1">#FF221F0F</color>
+    <color name="tabSampleGradient2">#FF1E1A1D</color>
+    <color name="tabSampleGradient3">#FF12191F</color>
+    <color name="tabSampleGradient4">#FF191426</color>
+
+</resources>
